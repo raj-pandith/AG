@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"C:\\\\Program Files\\\\Python311\\\\python.exe\" replace_text.py)",
+      "Bash(\"C:\\\\Program Files\\\\Python311\\\\python.exe\" -c \"import py_compile; py_compile.compile\\('replace_text.py', doraise=True\\)\")",
+      "Bash('C:\\\\Program Files\\\\Python311\\\\python.exe' -c ' *)"
+    ]
+  }
+}
