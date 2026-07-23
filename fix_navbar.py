@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """
-Insert the Animate Content marquee section into all non-home HTML pages
-so the navbar layout matches the home page exactly.
+Fix navbar layout:
+  1. Truncate CTA button text to max 5 words
+  2. Truncate menu item text to max 20 words
+  3. Ensure toggle button is OUTSIDE header-button div
 """
 
 import os
@@ -11,88 +13,128 @@ from pathlib import Path
 BASE = Path(r"c:\My Web Sites\Jain2\jainheritageschool.com")
 EXCLUDE_DIRS = {"admissions-2026-27"}
 
-# The exact block from index.html to insert before <div class="sticky-wrapper">
-# on every non-home page. Includes the marquee + inline style for .logo-bg.
-ANIMATE_CONTENT_BLOCK = '''        <!-- Animate Content Start -->
-        <div class="animate__content sp_bottom_15 sp_top_15">
-            <div class="container-fluid full__width__padding">
-                <div class="animate__content__marquee">
-                    <div class="animate__content__track">
-                        <div class="animate__content__item"><span class="cbse-affil-badge"><i class="fa-solid fa-certificate"></i> CBSE Affiliation No: 831454</span></div>
-                        <div class="animate__content__item"><a href="#" style="color:#001c54;">Finnish Education</a>
-                        </div>
-                        <div class="animate__content__item"><a href="#" style="color:#ffa500;">Best School</a></div>
-                        <div class="animate__content__item"><a href="#" style="color:#001c54;">Preschool–Grade 10</a>
-                        </div>
-                        <div class="animate__content__item"><a href="#" style="color:#ffa500;">Admissions Open</a></div>
-                        <div class="animate__content__item"><span>2026–2027</span></div>
-                        <div class="animate__content__item" style="color:#ffa500;">Limited Seats</div>
-                        <div class="animate__content__item"><span>Book Your Admission</span></div>
-                        <div class="animate__content__item" style="color:#ffa500;">Register Now</div>
 
-                        <!-- Duplicate for seamless loop -->
-                        <div class="animate__content__item"><span class="cbse-affil-badge"><i class="fa-solid fa-certificate"></i> CBSE Affiliation No: 831454</span></div>
-                        <div class="animate__content__item"><a href="#" style="color:#001c54;">Finnish Education</a>
-                        </div>
-                        <div class="animate__content__item"><a href="#" style="color:#ffa500;">Best School</a></div>
-                        <div class="animate__content__item"><a href="#" style="color:#001c54;">Preschool–Grade 10</a>
-                        </div>
-                        <div class="animate__content__item"><a href="#" style="color:#ffa500;">Admissions Closing Soon</a></div>
-                        <div class="animate__content__item"><span>2026–2027</span></div>
-                        <div class="animate__content__item" style="color:#ffa500;">Limited Seats</div>
-                        <div class="animate__content__item"><span>Book Your Admission</span></div>
-                        <div class="animate__content__item" style="color:#ffa500;">Register Now</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Animate Content End -->
+def truncate_words(text, max_words):
+    """Truncate text to max_words and add period."""
+    words = text.split()
+    if len(words) > max_words:
+        return ' '.join(words[:max_words]) + '.'
+    return text
 
 
-        <style>
-            .logo-bg {
-                mask-image: url("assets/img/logo_bg_mask.png");
-            }
-        </style>
+def fix_navbar(content):
+    changed = False
 
-        <!-- animate condtent end-->
+    # ====== FIX 1: Truncate CTA button text (Get In Touch button) ======
+    # Pattern: <a href="..." class="th-btn blue-btn th-icon">TEXT<i class="fa-light fa-arrow-right-long"></i></a>
+    cta_pattern = re.compile(
+        r'(<a href="admissions-2026-27[^"]*" target="_blank" class="th-btn blue-btn th-icon">)([^<]+)(<i class="fa-light fa-arrow-right-long"></i></a>)',
+        re.DOTALL
+    )
 
-'''
+    def fix_cta(match):
+        nonlocal changed
+        prefix = match.group(1)
+        text = match.group(2).strip()
+        suffix = match.group(3)
+
+        new_text = truncate_words(text, 5)
+        if new_text != text:
+            changed = True
+            return prefix + new_text + suffix
+        return match.group(0)
+
+    content = cta_pattern.sub(fix_cta, content)
+
+    # ====== FIX 2: Truncate long menu items (> 20 words) ======
+    menu_pattern = re.compile(
+        r'(<a\s+href="[^"]*"\s+[^>]*>)([^<]{30,})(</a>)',
+        re.DOTALL
+    )
+
+    def fix_menu(match):
+        nonlocal changed
+        prefix = match.group(1)
+        text = match.group(2).strip()
+        suffix = match.group(3)
+
+        new_text = truncate_words(text, 20)
+        if new_text != text:
+            changed = True
+            return prefix + new_text + suffix
+        return match.group(0)
+
+    content = menu_pattern.sub(fix_menu, content)
+
+    # ====== FIX 3: Fix toggle button placement ======
+    # Check if toggle button is inside header-button div (wrong)
+    # It should be OUTSIDE the div
+    toggle_pattern = re.compile(
+        r'(<div class="header-button d-none d-xl-block">\s*'
+        r'<!-- <button type="button" class="icon-btn[^>]*>\s*'
+        r'<img[^>]*>\s*'
+        r'</button> -->\s*'
+        r'<a href="admissions-2026-27[^"]*" target="_blank" class="th-btn blue-btn th-icon">[^<]+</a>)\s*'
+        r'(<button type="button" class="th-menu-toggle d-block d-xl-none">[^<]*</button>)\s*'
+        r'(</div>)',
+        re.DOTALL
+    )
+
+    def fix_toggle(match):
+        nonlocal changed
+        before_toggle = match.group(1)
+        toggle = match.group(2)
+        closing = match.group(3)
+
+        # Move toggle OUTSIDE the div
+        changed = True
+        return before_toggle + '\n                            </div>\n                            ' + toggle + '\n                        </div>'
+
+    content = toggle_pattern.sub(fix_toggle, content)
+
+    # Also handle case where toggle is missing entirely (add it)
+    if not changed:
+        # Check if there's a header-button but no toggle after it
+        header_btn_pattern = re.compile(
+            r'(<div class="header-button d-none d-xl-block">\s*'
+            r'<!-- <button type="button" class="icon-btn[^>]*>\s*'
+            r'<img[^>]*>\s*'
+            r'</button> -->\s*'
+            r'<a href="admissions-2026-27[^"]*" target="_blank" class="th-btn blue-btn th-icon">[^<]+</a>)\s*'
+            r'(</div>)\s*'
+            r'(</div>\s*</div>\s*</div>\s*<div class="logo-bg)',
+            re.DOTALL
+        )
+
+        def add_toggle(match):
+            nonlocal changed
+            btn_content = match.group(1)
+            div_close = match.group(2)
+            rest = match.group(3)
+
+            changed = True
+            return (btn_content + '\n                            </div>\n'
+                    '                            <button type="button" class="th-menu-toggle d-block d-xl-none"><i class="far fa-bars"></i></button>\n'
+                    '                        </div>\n                    </div>\n                </div>\n                <div class="logo-bg')
+
+        content = header_btn_pattern.sub(add_toggle, content)
+
+    return content, changed
 
 
 def process_file(filepath):
-    """Insert the Animate Content block before sticky-wrapper if not already present."""
     try:
         content = filepath.read_text(encoding='utf-8', errors='replace')
     except Exception as e:
-        print(f"  SKIP (read error): {filepath} — {e}")
+        print(f"  SKIP (read error): {filepath.name} — {e}")
         return False
 
-    # Skip index.html (home page already has it)
-    if filepath.name in ('index.html', 'index-2.html'):
+    if filepath.suffix != '.html':
         return False
 
-    # Skip if already has Animate Content
-    if 'Animate Content Start' in content:
-        return False
+    new_content, changed = fix_navbar(content)
 
-    # Check for sticky-wrapper (required insertion point)
-    if '<div class="sticky-wrapper">' not in content:
-        return False
-
-    # Insert the block before <div class="sticky-wrapper">
-    marker = '<div class="sticky-wrapper">'
-    idx = content.index(marker)
-
-    # Make sure we're inside the header (not a duplicate sticky-wrapper)
-    # Check that there's a header-top closing </div> nearby before the marker
-    header_section = content[:idx]
-    if 'header-top' not in header_section or '<header class=' not in header_section:
-        return False
-
-    new_content = content[:idx] + ANIMATE_CONTENT_BLOCK + content[idx:]
-
-    if new_content != content:
+    if changed:
         filepath.write_text(new_content, encoding='utf-8')
         return True
 
@@ -104,15 +146,15 @@ def main():
     for root, dirs, files in os.walk(BASE):
         dirs[:] = [d for d in dirs if d not in EXCLUDE_DIRS]
 
-        for fname in files:
+        for fname in sorted(files):
             if not fname.endswith('.html'):
                 continue
             filepath = Path(root) / fname
             if process_file(filepath):
                 total += 1
-                print(f"  {filepath.relative_to(BASE)} — navbar updated")
+                print(f"  {filepath.relative_to(BASE)} — navbar fixed")
 
-    print(f"\nDone! Updated navbar on {total} pages.")
+    print(f"\nDone! Fixed navbar on {total} pages.")
 
 
 if __name__ == "__main__":

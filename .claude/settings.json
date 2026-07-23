@@ -3,7 +3,12 @@
     "allow": [
       "Bash(\"C:\\\\Program Files\\\\Python311\\\\python.exe\" replace_text.py)",
       "Bash(\"C:\\\\Program Files\\\\Python311\\\\python.exe\" -c \"import py_compile; py_compile.compile\\('replace_text.py', doraise=True\\)\")",
-      "Bash('C:\\\\Program Files\\\\Python311\\\\python.exe' -c ' *)"
+      "Bash('C:\\\\Program Files\\\\Python311\\\\python.exe' -c ' *)",
+      "Bash(\"C:\\\\Program Files\\\\Python311\\\\python.exe\" -c \"import py_compile; py_compile.compile\\('fix_navbar.py', doraise=True\\); print\\('Syntax OK'\\)\")",
+      "Bash(\"C:\\\\Program Files\\\\Python311\\\\python.exe\" -c \"import py_compile; py_compile.compile\\('fix_navbar.py', doraise=True\\); print\\('OK'\\)\")",
+      "Bash(python fix_navbar_max2.py)",
+      "Bash(python -c ' *)",
+      "Bash(python fix_console_errors.py)"
     ]
   }
 }
