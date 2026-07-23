@@ -1092,6 +1092,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let formData = new FormData(form);
 
+            /* [COMMENTED OUT - API CALL DISABLED]
             fetch("mail.html", {
                 method: "POST",
                 body: formData
@@ -1118,6 +1119,14 @@ document.addEventListener("DOMContentLoaded", function () {
                         `<span style="color:red;font-weight:bold;">❌ Network error. Please try again later.</span>`;
                 }
             });
+            */
+
+            // [API DISABLED] Show local success message and reset form
+            if (messageBox) {
+                messageBox.innerHTML =
+                    `<span style="color:green;font-weight:bold;">✔ Your message has been sent successfully!</span>`;
+            }
+            form.reset();
 
         });
 

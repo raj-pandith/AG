@@ -979,7 +979,8 @@
         });
     });
 
-    /*----------- 08. Ajax Contact Form ----------*/
+    /*----------- 08. Ajax Contact Form [COMMENTED OUT - API CALL DISABLED] ----------*/
+    /*
     var form = ".ajax-contact";
     var invalidCls = "is-invalid";
     var $email = '[name="email"]';
@@ -1066,6 +1067,7 @@
         element.preventDefault();
         sendContact();
     });
+    */
 
     /*---------- 09. Search Box Popup ----------*/
     function popupSarchBox($searchBox, $searchOpen, $searchCls, $toggleCls) {

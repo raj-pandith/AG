@@ -1382,6 +1382,7 @@
                     formData.set("pickup_point", pickupSelect.value || "");
                 }
 
+                /* [COMMENTED OUT - API CALL DISABLED]
                 fetch("mail.html", {
                     method: "POST",
                     body: formData
@@ -1411,6 +1412,17 @@
                     messageBox.innerHTML =
                         `<span style="color:red;font-weight:bold;">❌ Something went wrong. Please try again.</span>`;
                 });
+                */
+                // [API DISABLED] Show local success message and reset form
+                messageBox.innerHTML =
+                    `<span style="color:green;font-weight:bold;">✔ Your request was submitted successfully!</span>`;
+                form.reset();
+                routeSection.classList.add("d-none");
+                pickupSection.classList.add("d-none");
+                customPickupSection.classList.add("d-none");
+                if (window.jQuery && jQuery.fn.niceSelect) {
+                    jQuery("select").niceSelect('update');
+                }
             });
         });
         </script>
