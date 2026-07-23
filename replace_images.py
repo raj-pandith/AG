@@ -20,7 +20,7 @@ BASE = Path(r"c:\My Web Sites\Jain2\jainheritageschool.com")
 PLACEHOLDER_PREFIX = "https://placehold.co"
 
 # Exclude the WordPress admissions directory
-EXCLUDE_DIRS = {"admissions-2026-27", "cdn.jsdelivr.net", "cdnjs.cloudflare.com",
+EXCLUDE_DIRS = {"cdn.jsdelivr.net", "cdnjs.cloudflare.com",
                 "translate.google.com", "www.googletagmanager.com"}
 
 
@@ -150,17 +150,20 @@ def process_file(filepath):
     replacements = 0
 
     # Find all <img> tags (handling multiline)
-    # We use a pattern that captures the full img tag
     img_pattern = re.compile(r'(<img\b[^>]*>)', re.IGNORECASE | re.DOTALL)
 
     def replace_img(m):
         nonlocal replacements
         tag = m.group(1)
 
+        # Skip if already processed
+        if 'data-original-src' in tag and 'placehold.co' in tag:
+            return tag
+
         w, h, old_src = get_img_dimensions(tag)
 
         if not old_src:
-            return tag  # No src found, skip
+            return tag
 
         # Skip if already a placehold.co URL
         if 'placehold.co' in old_src:
@@ -169,34 +172,65 @@ def process_file(filepath):
         # Build new placeholder URL
         new_url = f"{PLACEHOLDER_PREFIX}/{w}x{h}"
 
-        # Check if already has data-original-src (from previous run)
-        if 'data-original-src' in tag:
-            # Update just the src, keep the data-original-src
-            new_tag = re.sub(
-                r'src\s*=\s*["\'][^"\']*["\']',
-                f'src="{new_url}"',
-                tag,
-                count=1
-            )
-            replacements += 1
-            return new_tag
+        # Start with replacing src
+        if 'src=' in tag:
+            # Handle double-quoted src
+            if f'src="{old_src}"' in tag:
+                new_tag = tag.replace(f'src="{old_src}"', f'src="{new_url}"', 1)
+            else:
+                new_tag = re.sub(r"src='([^']*)'", f"src='{new_url}'", tag, count=1)
+            tag = new_tag
 
-        # Replace src with placehold.co URL, add data-original-src
-        new_tag = tag.replace(
-            f'src="{old_src}"',
-            f'src="{new_url}" data-original-src="{old_src}"',
-            1
-        )
-        # Also handle single-quoted src
-        if new_tag == tag:  # didn't replace
-            new_tag = re.sub(
-                r"src='([^']*)'",
-                f"src='{new_url}' data-original-src='\\1'",
+        # Replace data-src (lazy loading)
+        data_src_m = re.search(r'data-src\s*=\s*["\']([^"\']+)["\']', tag, re.IGNORECASE)
+        if data_src_m and 'placehold.co' not in data_src_m.group(1):
+            old_data_src = data_src_m.group(1)
+            dw, dh, _ = get_img_dimensions(tag)
+            data_src_url = f"{PLACEHOLDER_PREFIX}/{dw}x{dh}"
+            tag = re.sub(
+                r'data-src\s*=\s*["\'][^"\']*["\']',
+                f'data-src="{data_src_url}" data-original-data-src="{old_data_src}"',
                 tag,
                 count=1
             )
+
+        # Replace data-lazy-src
+        lazy_src_m = re.search(r'data-lazy-src\s*=\s*["\']([^"\']+)["\']', tag, re.IGNORECASE)
+        if lazy_src_m and 'placehold.co' not in lazy_src_m.group(1):
+            old_lazy = lazy_src_m.group(1)
+            dw, dh, _ = get_img_dimensions(tag)
+            lazy_url = f"{PLACEHOLDER_PREFIX}/{dw}x{dh}"
+            tag = re.sub(
+                r'data-lazy-src\s*=\s*["\'][^"\']*["\']',
+                f'data-lazy-src="{lazy_url}" data-original-lazy-src="{old_lazy}"',
+                tag,
+                count=1
+            )
+
+        # Replace srcset with a single placehold.co URL
+        srcset_m = re.search(r'srcset\s*=\s*["\']([^"\']+)["\']', tag, re.IGNORECASE)
+        if srcset_m and 'placehold.co' not in srcset_m.group(1):
+            old_srcset = srcset_m.group(1)
+            dw, dh, _ = get_img_dimensions(tag)
+            srcset_url = f"{PLACEHOLDER_PREFIX}/{dw}x{dh}"
+            tag = re.sub(
+                r'srcset\s*=\s*["\'][^"\']*["\']',
+                f'srcset="{srcset_url}" data-original-srcset="{old_srcset}"',
+                tag,
+                count=1
+            )
+
+        # Add data-original-src if not already present
+        if 'data-original-src' not in tag and old_src:
+            tag = re.sub(
+                r'(src\s*=\s*["\'][^"\']+["\'])',
+                f'\\1 data-original-src="{old_src}"',
+                tag,
+                count=1
+            )
+
         replacements += 1
-        return new_tag
+        return tag
 
     content = img_pattern.sub(replace_img, content)
 
