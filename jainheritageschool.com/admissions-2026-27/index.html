@@ -5465,12 +5465,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								</div>
 
 								<div class="banner_wrapper">
-									<a href="https://www.facebook.com/JainHeritageSchool" target="_blank"><i
-											class="icon-facebook"></i></a>
-									<a href="https://www.instagram.com/jainheritagebangalore/" target="_blank"><i
-											class="icon-instagram"></i></a>
-									<a href="https://twitter.com/jhsbangalore" target="_blank"><i
-											class="icon-twitter"></i></a>
+									<span><i
+											class="icon-facebook"></i></span>
+									<span><i
+											class="icon-instagram"></i></span>
+									<span><i
+											class="icon-twitter"></i></span>
 								</div>
 
 								<div class="search_wrapper">
@@ -5660,168 +5660,217 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 									<div class="mcb-wrap-inner">
 										<div class="column mcb-column mcb-item-ch0glqame one column_column">
 											<div class="column_attr clearfix" style="">
-												<h1 id="admission"">Apply For Admission!</h1>
-<form class="admission-form" action="#" method="POST" style="height:810px;width:100%;overflow-y:auto;padding:30px;background:#ffffff;border-radius:8px;box-shadow:0 2px 15px rgba(0,0,0,0.08);font-family:Open Sans,Arial,sans-serif;box-sizing:border-box;">
-	<div style="max-width:700px;margin:0 auto;">
-		<h2 style="text-align:center;color:#f98400;margin-bottom:5px;font-size:26px;">Apply For Admission</h2>
-		<p style="text-align:center;color:#666;margin-bottom:25px;font-size:14px;">Admissions open for 2026-27 from Pre-School to Grade 9</p>
-		<div style="display:grid;grid-template-columns:1fr 1fr;gap:15px 20px;">
-			<div>
-				<label style="display:block;font-weight:600;color:#333;margin-bottom:5px;font-size:13px;">Student Name <span style="color:red;">*</span></label>
-				<input type="text" name="student_name" required placeholder="Enter student full name" style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:4px;font-size:14px;box-sizing:border-box;">
-			</div>
-			<div>
-				<label style="display:block;font-weight:600;color:#333;margin-bottom:5px;font-size:13px;">Parent/Guardian Name <span style="color:red;">*</span></label>
-				<input type="text" name="parent_name" required placeholder="Enter parent/guardian name" style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:4px;font-size:14px;box-sizing:border-box;">
-			</div>
-			<div>
-				<label style="display:block;font-weight:600;color:#333;margin-bottom:5px;font-size:13px;">Email Address <span style="color:red;">*</span></label>
-				<input type="email" name="email" required placeholder="your.email@example.com" style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:4px;font-size:14px;box-sizing:border-box;">
-			</div>
-			<div>
-				<label style="display:block;font-weight:600;color:#333;margin-bottom:5px;font-size:13px;">Phone Number <span style="color:red;">*</span></label>
-				<input type="tel" name="phone" required placeholder="+91 98765 43210" pattern="[+]?[0-9\s-]{10,15}" style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:4px;font-size:14px;box-sizing:border-box;">
-			</div>
-			<div>
-				<label style="display:block;font-weight:600;color:#333;margin-bottom:5px;font-size:13px;">Grade Applying For <span style="color:red;">*</span></label>
-				<select name="grade" required style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:4px;font-size:14px;box-sizing:border-box;background:white;">
-					<option value="">Select Grade</option>
-					<option value="Pre-School">Pre-School</option>
-					<option value="Kindergarten">Kindergarten</option>
-					<option value="Grade 1">Grade 1</option>
-					<option value="Grade 2">Grade 2</option>
-					<option value="Grade 3">Grade 3</option>
-					<option value="Grade 4">Grade 4</option>
-					<option value="Grade 5">Grade 5</option>
-					<option value="Grade 6">Grade 6</option>
-					<option value="Grade 7">Grade 7</option>
-					<option value="Grade 8">Grade 8</option>
-					<option value="Grade 9">Grade 9</option>
-				</select>
-			</div>
-			<div>
-				<label style="display:block;font-weight:600;color:#333;margin-bottom:5px;font-size:13px;">Academic Year</label>
-				<input type="text" name="academic_year" value="2026-27" readonly style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:4px;font-size:14px;background:#f9f9f9;color:#666;box-sizing:border-box;">
-			</div>
-		</div>
-		<div style="margin-top:15px;">
-			<label style="display:block;font-weight:600;color:#333;margin-bottom:5px;font-size:13px;">Message / Query (Optional)</label>
-			<textarea name="message" rows="3" placeholder="Any specific questions or requirements..." style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:4px;font-size:14px;box-sizing:border-box;resize:vertical;font-family:Open Sans,Arial,sans-serif;"></textarea>
-		</div>
-		<div style="margin-top:20px;text-align:center;">
-			<button type="submit" style="background:linear-gradient(135deg,#f98400,#e67300);color:#fff;border:none;padding:14px 50px;font-size:16px;font-weight:700;border-radius:5px;cursor:pointer;text-transform:uppercase;letter-spacing:0.5px;transition:all 0.3s;box-shadow:0 4px 15px rgba(249,132,0,0.3);">Submit Application</button>
-		</div>
-		<p style="text-align:center;margin-top:15px;font-size:12px;color:#999;">By submitting this form, you agree to our <a href="privacy-policy.html" style="color:#f98400;text-decoration:none;">Privacy Policy</a></p>
-	</div>
-</form>
+												<h1 id="admission"">yua huyee adhidie!</h1>
+<form class=" admission-form" action="#" method="POST"
+													style="height:810px;width:100%;overflow-y:auto;padding:30px;background:#ffffff;border-radius:8px;box-shadow:0 2px 15px rgba(0,0,0,0.08);font-family:Open Sans,Arial,sans-serif;box-sizing:border-box;">
+													<div style="max-width:700px;margin:0 auto;">
+														<h2
+															style="text-align:center;color:#f98400;margin-bottom:5px;font-size:26px;">
+															Apply For Admission</h2>
+														<p
+															style="text-align:center;color:#666;margin-bottom:25px;font-size:14px;">
+															Admissions open for 2026-27 from Pre-School to Grade 9</p>
+														<div
+															style="display:grid;grid-template-columns:1fr 1fr;gap:15px 20px;">
+															<div>
+																<label
+																	style="display:block;font-weight:600;color:#333;margin-bottom:5px;font-size:13px;">Student
+																	Name <span style="color:red;">*</span></label>
+																<input type="text" name="student_name" required
+																	placeholder="Enter student full name"
+																	style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:4px;font-size:14px;box-sizing:border-box;">
+															</div>
+															<div>
+																<label
+																	style="display:block;font-weight:600;color:#333;margin-bottom:5px;font-size:13px;">Parent/Guardian
+																	Name <span style="color:red;">*</span></label>
+																<input type="text" name="parent_name" required
+																	placeholder="Enter parent/guardian name"
+																	style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:4px;font-size:14px;box-sizing:border-box;">
+															</div>
+															<div>
+																<label
+																	style="display:block;font-weight:600;color:#333;margin-bottom:5px;font-size:13px;">Email
+																	Address <span style="color:red;">*</span></label>
+																<input type="email" name="email" required
+																	placeholder="your.email@example.com"
+																	style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:4px;font-size:14px;box-sizing:border-box;">
+															</div>
+															<div>
+																<label
+																	style="display:block;font-weight:600;color:#333;margin-bottom:5px;font-size:13px;">Phone
+																	Number <span style="color:red;">*</span></label>
+																<input type="tel" name="phone" required
+																	placeholder="+91 98765 43210"
+																	pattern="[+]?[0-9\s-]{10,15}"
+																	style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:4px;font-size:14px;box-sizing:border-box;">
+															</div>
+															<div>
+																<label
+																	style="display:block;font-weight:600;color:#333;margin-bottom:5px;font-size:13px;">Grade
+																	Applying For <span
+																		style="color:red;">*</span></label>
+																<select name="grade" required
+																	style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:4px;font-size:14px;box-sizing:border-box;background:white;">
+																	<option value="">Select Grade</option>
+																	<option value="Pre-School">Pre-School</option>
+																	<option value="Kindergarten">Kindergarten</option>
+																	<option value="Grade 1">Grade 1</option>
+																	<option value="Grade 2">Grade 2</option>
+																	<option value="Grade 3">Grade 3</option>
+																	<option value="Grade 4">Grade 4</option>
+																	<option value="Grade 5">Grade 5</option>
+																	<option value="Grade 6">Grade 6</option>
+																	<option value="Grade 7">Grade 7</option>
+																	<option value="Grade 8">Grade 8</option>
+																	<option value="Grade 9">Grade 9</option>
+																</select>
+															</div>
+															<div>
+																<label
+																	style="display:block;font-weight:600;color:#333;margin-bottom:5px;font-size:13px;">Academic
+																	Year</label>
+																<input type="text" name="academic_year" value="2026-27"
+																	readonly
+																	style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:4px;font-size:14px;background:#f9f9f9;color:#666;box-sizing:border-box;">
+															</div>
+														</div>
+														<div style="margin-top:15px;">
+															<label
+																style="display:block;font-weight:600;color:#333;margin-bottom:5px;font-size:13px;">Message
+																/ Query (Optional)</label>
+															<textarea name="message" rows="3"
+																placeholder="Any specific questions or requirements..."
+																style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:4px;font-size:14px;box-sizing:border-box;resize:vertical;font-family:Open Sans,Arial,sans-serif;"></textarea>
+														</div>
+														<div style="margin-top:20px;text-align:center;">
+															<button type="submit"
+																style="background:linear-gradient(135deg,#f98400,#e67300);color:#fff;border:none;padding:14px 50px;font-size:16px;font-weight:700;border-radius:5px;cursor:pointer;text-transform:uppercase;letter-spacing:0.5px;transition:all 0.3s;box-shadow:0 4px 15px rgba(249,132,0,0.3);">Submit
+																Application</button>
+														</div>
+														<p
+															style="text-align:center;margin-top:15px;font-size:12px;color:#999;">
+															By submitting this form, you agree to our <a
+																href="privacy-policy.html"
+																style="color:#f98400;text-decoration:none;">Privacy
+																Policy</a></p>
+													</div>
+													</form>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div data-bg="https://placehold.co/1200x800"
-							class="section mcb-section mcb-section-nyj7fx480 no-margin-v bg-cover rocket-lazyload"
-							id="admission"
-							style="padding-top:40px;padding-bottom:80px;background-color:#f7f7f7;background-repeat:no-repeat;background-position:center">
-							<div class="section_wrapper mcb-section-inner">
-								<div class="wrap mcb-wrap mcb-wrap-wqbn8225u three-fifth numbers-col valign-top bg-contain clearfix"
-									style="padding:20px;background-color:#ffffff">
-									<div class="mcb-wrap-inner">
-										<div
-											class="column mcb-column mcb-item-07ukcfs2v one column_column column-margin-0px">
-											<div class="column_attr clearfix align_center"
-												style="background-color:#e9edf5;">
-												<h2><strong>Key Learning Benefits @JHS</strong></h2>
-											</div>
-										</div>
-										<div class="column mcb-column mcb-item-ouqcm3f54 one-third column_counter">
-											<div class="counter counter_vertical animate-math">
-												<div class="icon_wrapper"></div>
-												<div class="desc_wrapper">
-													<div class="number-wrapper"><span class="number"
-															data-to="14">14</span><span class="label postfix">+</span>
-													</div>
-													<p class="title">Years of Excellence</p>
+							<div data-bg="https://placehold.co/1200x800"
+								class="section mcb-section mcb-section-nyj7fx480 no-margin-v bg-cover rocket-lazyload"
+								id="admission"
+								style="padding-top:40px;padding-bottom:80px;background-color:#f7f7f7;background-repeat:no-repeat;background-position:center">
+								<div class="section_wrapper mcb-section-inner">
+									<div class="wrap mcb-wrap mcb-wrap-wqbn8225u three-fifth numbers-col valign-top bg-contain clearfix"
+										style="padding:20px;background-color:#ffffff">
+										<div class="mcb-wrap-inner">
+											<div
+												class="column mcb-column mcb-item-07ukcfs2v one column_column column-margin-0px">
+												<div class="column_attr clearfix align_center"
+													style="background-color:#e9edf5;">
+													<h2><strong>Key Learning Benefits @JHS</strong></h2>
 												</div>
 											</div>
-										</div>
-										<div class="column mcb-column mcb-item-ludplppj1 one-third column_counter">
-											<div class="counter counter_vertical animate-math">
-												<div class="icon_wrapper"></div>
-												<div class="desc_wrapper">
-													<div class="number-wrapper"><span class="number"
-															data-to="100">100</span><span class="label postfix">+</span>
+											<div class="column mcb-column mcb-item-ouqcm3f54 one-third column_counter">
+												<div class="counter counter_vertical animate-math">
+													<div class="icon_wrapper"></div>
+													<div class="desc_wrapper">
+														<div class="number-wrapper"><span class="number"
+																data-to="14">14</span><span
+																class="label postfix">+</span>
+														</div>
+														<p class="title">Years of Excellence</p>
 													</div>
-													<p class="title">Qualified Faculties</p>
 												</div>
 											</div>
-										</div>
-										<div
-											class="column mcb-column mcb-item-ow8gyj0ch one-third column_counter students-num">
-											<div class="counter counter_vertical animate-math">
-												<div class="icon_wrapper"></div>
-												<div class="desc_wrapper">
-													<div class="number-wrapper"><span class="number"
-															data-to="1">1</span><span class="label postfix">:15</span>
+											<div class="column mcb-column mcb-item-ludplppj1 one-third column_counter">
+												<div class="counter counter_vertical animate-math">
+													<div class="icon_wrapper"></div>
+													<div class="desc_wrapper">
+														<div class="number-wrapper"><span class="number"
+																data-to="100">100</span><span
+																class="label postfix">+</span>
+														</div>
+														<p class="title">Qualified Faculties</p>
 													</div>
-													<p class="title">Staff - Students Ratio</p>
+												</div>
+											</div>
+											<div
+												class="column mcb-column mcb-item-ow8gyj0ch one-third column_counter students-num">
+												<div class="counter counter_vertical animate-math">
+													<div class="icon_wrapper"></div>
+													<div class="desc_wrapper">
+														<div class="number-wrapper"><span class="number"
+																data-to="1">1</span><span
+																class="label postfix">:15</span>
+														</div>
+														<p class="title">Staff - Students Ratio</p>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="wrap mcb-wrap mcb-wrap-kgbipsvup two-fifth  valign-top clearfix" style="">
-									<div class="mcb-wrap-inner">
-										<div
-											class="column mcb-column mcb-item-i1awb22de one column_slider_plugin gallery-slider">
-											<div class="mfn-main-slider mfn-rev-slider">
-												<!-- START Gallery REVOLUTION SLIDER 6.4.3 -->
-												<p class="rs-p-wp-fix"></p>
-												<rs-module-wrap id="rev_slider_2_2_wrapper" data-source="gallery"
-													style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
-													<rs-module id="rev_slider_2_2" style="" data-version="6.4.3">
-														<rs-slides>
-															<rs-slide data-key="rs-3" data-title="Slide"
-																data-in="o:0;y:(-100%);col:5;" data-out="a:false;">
-																<img src="https://placehold.co/520x370"
-																	data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/10/001.jpg"
-																	title="001" width="520" height="370"
-																	class="rev-slidebg" data-no-retina
-																	data-lazy-src="https://placehold.co/520x370"><noscript><img
-																		src="https://placehold.co/520x370"
+									<div class="wrap mcb-wrap mcb-wrap-kgbipsvup two-fifth  valign-top clearfix"
+										style="">
+										<div class="mcb-wrap-inner">
+											<div
+												class="column mcb-column mcb-item-i1awb22de one column_slider_plugin gallery-slider">
+												<div class="mfn-main-slider mfn-rev-slider">
+													<!-- START Gallery REVOLUTION SLIDER 6.4.3 -->
+													<p class="rs-p-wp-fix"></p>
+													<rs-module-wrap id="rev_slider_2_2_wrapper" data-source="gallery"
+														style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
+														<rs-module id="rev_slider_2_2" style="" data-version="6.4.3">
+															<rs-slides>
+																<rs-slide data-key="rs-3" data-title="Slide"
+																	data-in="o:0;y:(-100%);col:5;" data-out="a:false;">
+																	<img src="https://placehold.co/520x370"
 																		data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/10/001.jpg"
 																		title="001" width="520" height="370"
-																		class="rev-slidebg" data-no-retina></noscript>
-																<!----> </rs-slide>
-															<rs-slide data-key="rs-58" data-title="Slide"
-																data-in="o:0;y:(-100%);col:5;" data-out="a:false;">
-																<img src="https://placehold.co/520x370"
-																	data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/10/003.jpg"
-																	title="003" width="520" height="370"
-																	class="rev-slidebg" data-no-retina
-																	data-lazy-src="https://placehold.co/520x370"><noscript><img
-																		src="https://placehold.co/520x370"
+																		class="rev-slidebg" data-no-retina
+																		data-lazy-src="https://placehold.co/520x370"><noscript><img
+																			src="https://placehold.co/520x370"
+																			data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/10/001.jpg"
+																			title="001" width="520" height="370"
+																			class="rev-slidebg"
+																			data-no-retina></noscript>
+																	<!----> </rs-slide>
+																<rs-slide data-key="rs-58" data-title="Slide"
+																	data-in="o:0;y:(-100%);col:5;" data-out="a:false;">
+																	<img src="https://placehold.co/520x370"
 																		data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/10/003.jpg"
 																		title="003" width="520" height="370"
-																		class="rev-slidebg" data-no-retina></noscript>
-																<!----> </rs-slide>
-															<rs-slide data-key="rs-57" data-title="Slide"
-																data-in="o:0;y:(-100%);col:5;" data-out="a:false;">
-																<img src="https://placehold.co/520x370"
-																	data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/10/002.jpg"
-																	title="002" width="520" height="370"
-																	class="rev-slidebg" data-no-retina
-																	data-lazy-src="https://placehold.co/520x370"><noscript><img
-																		loading="lazy"
-																		src="https://placehold.co/520x370"
+																		class="rev-slidebg" data-no-retina
+																		data-lazy-src="https://placehold.co/520x370"><noscript><img
+																			src="https://placehold.co/520x370"
+																			data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/10/003.jpg"
+																			title="003" width="520" height="370"
+																			class="rev-slidebg"
+																			data-no-retina></noscript>
+																	<!----> </rs-slide>
+																<rs-slide data-key="rs-57" data-title="Slide"
+																	data-in="o:0;y:(-100%);col:5;" data-out="a:false;">
+																	<img src="https://placehold.co/520x370"
 																		data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/10/002.jpg"
 																		title="002" width="520" height="370"
-																		class="rev-slidebg" data-no-retina></noscript>
-																<!----> </rs-slide>
-														</rs-slides>
-													</rs-module>
-													<script type="rocketlazyloadscript"
-														data-rocket-type="text/javascript">
+																		class="rev-slidebg" data-no-retina
+																		data-lazy-src="https://placehold.co/520x370"><noscript><img
+																			loading="lazy"
+																			src="https://placehold.co/520x370"
+																			data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/10/002.jpg"
+																			title="002" width="520" height="370"
+																			class="rev-slidebg"
+																			data-no-retina></noscript>
+																	<!----> </rs-slide>
+															</rs-slides>
+														</rs-module>
+														<script type="rocketlazyloadscript"
+															data-rocket-type="text/javascript">
 					setREVStartSize({c: 'rev_slider_2_2',rl:[1240,1024,778,480],el:[596],gw:[866],gh:[596],type:'standard',justify:'',layout:'fullwidth',mh:"0"});
 					var	revapi2,
 						tpj;
@@ -5857,274 +5906,296 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				var once_revslider22 = false;
 				if (document.readyState === "loading") {document.addEventListener('readystatechange',function() { if((document.readyState === "interactive" || document.readyState === "complete") && !once_revslider22 ) { once_revslider22 = true; revinit_revslider22();}});} else {once_revslider22 = true; revinit_revslider22();}
 				</script>
-												</rs-module-wrap>
-												<!-- END REVOLUTION SLIDER -->
+													</rs-module-wrap>
+													<!-- END REVOLUTION SLIDER -->
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div data-bg="https://placehold.co/1200x800"
-							class="section mcb-section mcb-section-6mnr0y5wh dark equal-height-wrap bg-cover rocket-lazyload"
-							id="about-jhs"
-							style="padding-top:60px;padding-bottom:20px;background-repeat:no-repeat;background-position:center">
-							<div class="section_wrapper mcb-section-inner">
-								<div class="wrap mcb-wrap mcb-wrap-vpg1z74ph two-fifth  valign-top clearfix" style="">
-									<div class="mcb-wrap-inner">
-										<div class="column mcb-column mcb-item-2kat9rbcb one column_image">
-											<div class="image_frame image_item scale-with-grid aligncenter no_border">
-												<div class="image_wrapper"><a href="https://youtu.be/uOplMP1bRRU"
-														rel="prettyphoto">
-														<div class="mask"></div><img width="539" height="524"
-															class="scale-with-grid" src="https://placehold.co/539x524"
-															data-original-src="https://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/10/video-thumb.png.jpg"
-															alt="Home Page" title=""
-															data-lazy-src="https://placehold.co/539x524" /><noscript><img
-																width="539" height="524" class="scale-with-grid"
+							<div data-bg="https://placehold.co/1200x800"
+								class="section mcb-section mcb-section-6mnr0y5wh dark equal-height-wrap bg-cover rocket-lazyload"
+								id="about-jhs"
+								style="padding-top:60px;padding-bottom:20px;background-repeat:no-repeat;background-position:center">
+								<div class="section_wrapper mcb-section-inner">
+									<div class="wrap mcb-wrap mcb-wrap-vpg1z74ph two-fifth  valign-top clearfix"
+										style="">
+										<div class="mcb-wrap-inner">
+											<div class="column mcb-column mcb-item-2kat9rbcb one column_image">
+												<div
+													class="image_frame image_item scale-with-grid aligncenter no_border">
+													<div class="image_wrapper"><a href="https://youtu.be/uOplMP1bRRU"
+															rel="prettyphoto">
+															<div class="mask"></div><img width="539" height="524"
+																class="scale-with-grid"
 																src="https://placehold.co/539x524"
 																data-original-src="https://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/10/video-thumb.png.jpg"
-																alt="Home Page" title="" /></noscript>
-													</a>
-													<div class="image_links "><a href="https://youtu.be/uOplMP1bRRU"
-															class="zoom" rel="prettyphoto"><i
-																class="icon-search"></i></a></div>
+																alt="Home Page" title=""
+																data-lazy-src="https://placehold.co/539x524" /><noscript><img
+																	width="539" height="524" class="scale-with-grid"
+																	src="https://placehold.co/539x524"
+																	data-original-src="https://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/10/video-thumb.png.jpg"
+																	alt="Home Page" title="" /></noscript>
+														</a>
+														<div class="image_links "><a href="https://youtu.be/uOplMP1bRRU"
+																class="zoom" rel="prettyphoto"><i
+																	class="icon-search"></i></a></div>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="wrap mcb-wrap mcb-wrap-btcczdnhr three-fifth  valign-middle clearfix"
-									style="padding:0 0 0 40px">
-									<div class="mcb-wrap-inner">
-										<div
-											class="column mcb-column mcb-item-ub0kndacm one column_column column-margin-10px">
-											<div class="column_attr clearfix animate" data-anim-type="fadeInRight"
-												style="font-size: 18px;     font-weight: 100;     line-height: 28px;">
-												<h2><strong>About Jain Heritage School</strong></h2>
-
-												<p style="margin-bottom: 30px;">Jain Heritage School is a member of the
-													prestigious JGI Group.It is considered to be the best day boarding
-													school in Bangalore. Initiated in 1990 by the dynamism of its
-													founder and Chairman Dr. Chenraj Roychand.</p>
-
-												<p style="margin-bottom: 30px;">We are a school that prides itself not
-													only in fostering academic excellence but also in making our
-													learners spend at school satisfying, fulfilling and joyous moments.
-													These formative years should be remembered by our children
-													throughout their lives.</p>
-
-												<p>As a school, we firmly believe that education should be for life, not
-													just for a living. Education should serve not only to develop one's
-													intelligence and skills but also help broaden one's outlook and make
-													a person useful and the world at large.</p>
-											</div>
-										</div>
-										<div class="column mcb-column mcb-item-vh5n38okf one column_button"><a
-												class="button  button_size_2" href="#admission"
-												style="background-color:#f98400!important;color:#ffffff;"><span
-													class="button_label">Know More About The School</span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div data-bg="https://placehold.co/1200x800"
-							class="section mcb-section mcb-section-f3soxsre6 no-margin-v equal-height-wrap bg-cover rocket-lazyload"
-							id="why-jhs"
-							style="padding-top:20px;padding-bottom:60px;background-color:#f7f7f7;background-repeat:no-repeat;background-position:center">
-							<div class="section_wrapper mcb-section-inner">
-								<div class="wrap mcb-wrap mcb-wrap-do4fdra6k one-second  valign-middle clearfix"
-									style="">
-									<div class="mcb-wrap-inner">
-										<div class="column mcb-column mcb-item-o8xmx7wsk one column_column">
-											<div class="column_attr clearfix animate" data-anim-type="fadeInRight"
-												style="padding:0 40px 0 0;">
-												<h3><strong>Why Jain Heritage School</strong></h3>
-
-												<ul>
-													<li>Sports education is a distinctive feature at JHS.</li>
-													<li>Offers academic programs, which include cross-disciplinary
-														subjects.</li>
-													<li>Well lit and adequately equipped classrooms for enhanced
-														learning experience.</li>
-													<li>The library offers knowledge on a spectrum of subjects to
-														satisfy the urge to learn and curiosity that is so natural to
-														the child.</li>
-													<li>We offer state of the art Laboratories.</li>
-													<li>JHS provides a Unique learning space called the "The discovery
-														zone" designed to arouse curiosity, stimulate creativity and
-														promote enquiry in students.</li>
-													<li>Offers "Essentials of Budding Entrepreneur" program for Grades
-														6-8 students to improve their business skills and help them turn
-														into successful entrepreneurs.</li>
-												</ul>
-											</div>
-										</div>
-										<div class="column mcb-column mcb-item-80z8zpj04 one column_button"><a
-												class="button scroll button_size_2" href="#admission"
-												style="background-color:#f98400!important;color:#ffffff;"><span
-													class="button_label">APPLY FOR ADMISSION</span></a>
-										</div>
-										<div class="column mcb-column mcb-item-twdrito84 one column_button"><a
-												class="button scroll button_size_2" href="#admission"
-												style="background-color:#f98400!important;color:#ffffff;"><span
-													class="button_label">APPLY FOR ADMISSION</span></a>
-										</div>
-									</div>
-								</div>
-								<div class="wrap mcb-wrap mcb-wrap-99fk23sy6 one-second  valign-top clearfix" style="">
-									<div class="mcb-wrap-inner">
-										<div
-											class="column mcb-column mcb-item-km4r9qifq one column_image why-video-desktop">
+									<div class="wrap mcb-wrap mcb-wrap-btcczdnhr three-fifth  valign-middle clearfix"
+										style="padding:0 0 0 40px">
+										<div class="mcb-wrap-inner">
 											<div
-												class="image_frame image_item scale-with-grid aligncenter stretch no_border hover-disable">
-												<div class="image_wrapper"><a href="https://vimeo.com/769334079"
-														rel="prettyphoto">
-														<div class="mask"></div><img width="611" height="551"
-															class="scale-with-grid" src="https://placehold.co/611x551"
-															data-original-src="https://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/why-video-thumb-v4.png"
-															alt="Home Page" title=""
-															data-lazy-src="https://placehold.co/611x551" /><noscript><img
-																width="611" height="551" class="scale-with-grid"
-																src="https://placehold.co/611x551"
-																data-original-src="https://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/why-video-thumb-v4.png"
-																alt="Home Page" title="" /></noscript>
-													</a>
-													<div class="image_links "><a href="https://vimeo.com/769334079"
-															class="zoom" rel="prettyphoto"><i
-																class="icon-search"></i></a></div>
+												class="column mcb-column mcb-item-ub0kndacm one column_column column-margin-10px">
+												<div class="column_attr clearfix animate" data-anim-type="fadeInRight"
+													style="font-size: 18px;     font-weight: 100;     line-height: 28px;">
+													<h2><strong>About Jain Heritage School</strong></h2>
+
+													<p style="margin-bottom: 30px;">Jain Heritage School is a member of
+														the
+														prestigious JGI Group.It is considered to be the best day
+														boarding
+														school in Bangalore. Initiated in 1990 by the dynamism of its
+														founder and Chairman Dr. Chenraj Roychand.</p>
+
+													<p style="margin-bottom: 30px;">We are a school that prides itself
+														not
+														only in fostering academic excellence but also in making our
+														learners spend at school satisfying, fulfilling and joyous
+														moments.
+														These formative years should be remembered by our children
+														throughout their lives.</p>
+
+													<p>As a school, we firmly believe that education should be for life,
+														not
+														just for a living. Education should serve not only to develop
+														one's
+														intelligence and skills but also help broaden one's outlook and
+														make
+														a person useful and the world at large.</p>
 												</div>
 											</div>
-										</div>
-										<div
-											class="column mcb-column mcb-item-ly4klkfnp one column_image why-video-mobile">
-											<div
-												class="image_frame image_item scale-with-grid aligncenter stretch no_border hover-disable">
-												<div class="image_wrapper"><a href="https://vimeo.com/768842597"
-														rel="prettyphoto">
-														<div class="mask"></div><img width="611" height="551"
-															class="scale-with-grid" src="https://placehold.co/611x551"
-															data-original-src="https://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/why-video-thumb-v4.png"
-															alt="Home Page" title=""
-															data-lazy-src="https://placehold.co/611x551" /><noscript><img
-																width="611" height="551" class="scale-with-grid"
-																src="https://placehold.co/611x551"
-																data-original-src="https://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/why-video-thumb-v4.png"
-																alt="Home Page" title="" /></noscript>
-													</a>
-													<div class="image_links "><a href="https://vimeo.com/768842597"
-															class="zoom" rel="prettyphoto"><i
-																class="icon-search"></i></a></div>
-												</div>
+											<div class="column mcb-column mcb-item-vh5n38okf one column_button"><a
+													class="button  button_size_2" href="#admission"
+													style="background-color:#f98400!important;color:#ffffff;"><span
+														class="button_label">Know More About The School</span></a>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div data-bg="https://placehold.co/1200x800"
-							class="section mcb-section mcb-section-7jryye6db no-margin-v bg-cover rocket-lazyload"
-							id="life-at-jhs"
-							style="padding-top:60px;padding-bottom:60px;background-color:#c4e0ee;background-repeat:no-repeat;background-position:right bottom">
-							<div class="section_wrapper mcb-section-inner">
-								<div class="wrap mcb-wrap mcb-wrap-minpuyyzj one  valign-top clearfix" style="">
-									<div class="mcb-wrap-inner">
-										<div
-											class="column mcb-column mcb-item-6j7w68wld one column_column column-margin-40px">
-											<div class="column_attr clearfix align_center animate"
-												data-anim-type="fadeInRight" style="">
-												<h3><strong>Ensuring a wholesome development</strong></h3>
+							<div data-bg="https://placehold.co/1200x800"
+								class="section mcb-section mcb-section-f3soxsre6 no-margin-v equal-height-wrap bg-cover rocket-lazyload"
+								id="why-jhs"
+								style="padding-top:20px;padding-bottom:60px;background-color:#f7f7f7;background-repeat:no-repeat;background-position:center">
+								<div class="section_wrapper mcb-section-inner">
+									<div class="wrap mcb-wrap mcb-wrap-do4fdra6k one-second  valign-middle clearfix"
+										style="">
+										<div class="mcb-wrap-inner">
+											<div class="column mcb-column mcb-item-o8xmx7wsk one column_column">
+												<div class="column_attr clearfix animate" data-anim-type="fadeInRight"
+													style="padding:0 40px 0 0;">
+													<h3><strong>Why Jain Heritage School</strong></h3>
+
+													<ul>
+														<li>Sports education is a distinctive feature at JHS.</li>
+														<li>Offers academic programs, which include cross-disciplinary
+															subjects.</li>
+														<li>Well lit and adequately equipped classrooms for enhanced
+															learning experience.</li>
+														<li>The library offers knowledge on a spectrum of subjects to
+															satisfy the urge to learn and curiosity that is so natural
+															to
+															the child.</li>
+														<li>We offer state of the art Laboratories.</li>
+														<li>JHS provides a Unique learning space called the "The
+															discovery
+															zone" designed to arouse curiosity, stimulate creativity and
+															promote enquiry in students.</li>
+														<li>Offers "Essentials of Budding Entrepreneur" program for
+															Grades
+															6-8 students to improve their business skills and help them
+															turn
+															into successful entrepreneurs.</li>
+													</ul>
+												</div>
+											</div>
+											<div class="column mcb-column mcb-item-80z8zpj04 one column_button"><a
+													class="button scroll button_size_2" href="#admission"
+													style="background-color:#f98400!important;color:#ffffff;"><span
+														class="button_label">APPLY FOR ADMISSION</span></a>
+											</div>
+											<div class="column mcb-column mcb-item-twdrito84 one column_button"><a
+													class="button scroll button_size_2" href="#admission"
+													style="background-color:#f98400!important;color:#ffffff;"><span
+														class="button_label">APPLY FOR ADMISSION</span></a>
+											</div>
+										</div>
+									</div>
+									<div class="wrap mcb-wrap mcb-wrap-99fk23sy6 one-second  valign-top clearfix"
+										style="">
+										<div class="mcb-wrap-inner">
+											<div
+												class="column mcb-column mcb-item-km4r9qifq one column_image why-video-desktop">
+												<div
+													class="image_frame image_item scale-with-grid aligncenter stretch no_border hover-disable">
+													<div class="image_wrapper"><a href="https://vimeo.com/769334079"
+															rel="prettyphoto">
+															<div class="mask"></div><img width="611" height="551"
+																class="scale-with-grid"
+																src="https://placehold.co/611x551"
+																data-original-src="https://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/why-video-thumb-v4.png"
+																alt="Home Page" title=""
+																data-lazy-src="https://placehold.co/611x551" /><noscript><img
+																	width="611" height="551" class="scale-with-grid"
+																	src="https://placehold.co/611x551"
+																	data-original-src="https://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/why-video-thumb-v4.png"
+																	alt="Home Page" title="" /></noscript>
+														</a>
+														<div class="image_links "><a href="https://vimeo.com/769334079"
+																class="zoom" rel="prettyphoto"><i
+																	class="icon-search"></i></a></div>
+													</div>
+												</div>
+											</div>
+											<div
+												class="column mcb-column mcb-item-ly4klkfnp one column_image why-video-mobile">
+												<div
+													class="image_frame image_item scale-with-grid aligncenter stretch no_border hover-disable">
+													<div class="image_wrapper"><a href="https://vimeo.com/768842597"
+															rel="prettyphoto">
+															<div class="mask"></div><img width="611" height="551"
+																class="scale-with-grid"
+																src="https://placehold.co/611x551"
+																data-original-src="https://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/why-video-thumb-v4.png"
+																alt="Home Page" title=""
+																data-lazy-src="https://placehold.co/611x551" /><noscript><img
+																	width="611" height="551" class="scale-with-grid"
+																	src="https://placehold.co/611x551"
+																	data-original-src="https://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/why-video-thumb-v4.png"
+																	alt="Home Page" title="" /></noscript>
+														</a>
+														<div class="image_links "><a href="https://vimeo.com/768842597"
+																class="zoom" rel="prettyphoto"><i
+																	class="icon-search"></i></a></div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="wrap mcb-wrap mcb-wrap-s9yjb003s one-second  valign-top clearfix" style="">
-									<div class="mcb-wrap-inner">
-										<div
-											class="column mcb-column mcb-item-iv4dud1qu one column_slider_plugin sliderthumbs">
-											<div class="mfn-main-slider mfn-rev-slider">
-												<!-- START Life @ Jain Heritage School REVOLUTION SLIDER 6.4.3 -->
-												<p class="rs-p-wp-fix"></p>
-												<rs-module-wrap id="rev_slider_6_3_wrapper" data-source="gallery"
-													style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
-													<rs-module id="rev_slider_6_3" style="" data-version="6.4.3">
-														<rs-slides>
-															<rs-slide data-key="rs-45" data-title="Slide"
-																data-thumb="https://placehold.co/50x100"
-																data-in="o:0;x:100%;" data-out="a:false;">
-																<img src="https://placehold.co/2560x1920"
-																	data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/jhs-1-scaled.jpg"
-																	title="jhs (1)" width="2560" height="1920"
-																	class="rev-slidebg" data-no-retina
-																	data-lazy-src="https://placehold.co/2560x1920"><noscript><img
-																		loading="lazy"
-																		src="https://placehold.co/2560x1920"
+							</div>
+							<div data-bg="https://placehold.co/1200x800"
+								class="section mcb-section mcb-section-7jryye6db no-margin-v bg-cover rocket-lazyload"
+								id="life-at-jhs"
+								style="padding-top:60px;padding-bottom:60px;background-color:#c4e0ee;background-repeat:no-repeat;background-position:right bottom">
+								<div class="section_wrapper mcb-section-inner">
+									<div class="wrap mcb-wrap mcb-wrap-minpuyyzj one  valign-top clearfix" style="">
+										<div class="mcb-wrap-inner">
+											<div
+												class="column mcb-column mcb-item-6j7w68wld one column_column column-margin-40px">
+												<div class="column_attr clearfix align_center animate"
+													data-anim-type="fadeInRight" style="">
+													<h3><strong>Ensuring a wholesome development</strong></h3>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="wrap mcb-wrap mcb-wrap-s9yjb003s one-second  valign-top clearfix"
+										style="">
+										<div class="mcb-wrap-inner">
+											<div
+												class="column mcb-column mcb-item-iv4dud1qu one column_slider_plugin sliderthumbs">
+												<div class="mfn-main-slider mfn-rev-slider">
+													<!-- START Life @ Jain Heritage School REVOLUTION SLIDER 6.4.3 -->
+													<p class="rs-p-wp-fix"></p>
+													<rs-module-wrap id="rev_slider_6_3_wrapper" data-source="gallery"
+														style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
+														<rs-module id="rev_slider_6_3" style="" data-version="6.4.3">
+															<rs-slides>
+																<rs-slide data-key="rs-45" data-title="Slide"
+																	data-thumb="https://placehold.co/50x100"
+																	data-in="o:0;x:100%;" data-out="a:false;">
+																	<img src="https://placehold.co/2560x1920"
 																		data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/jhs-1-scaled.jpg"
 																		title="jhs (1)" width="2560" height="1920"
-																		class="rev-slidebg" data-no-retina></noscript>
-																<!----> </rs-slide>
-															<rs-slide data-key="rs-43" data-title="Slide"
-																data-thumb="https://placehold.co/50x100"
-																data-in="o:0;x:100%;" data-out="a:false;">
-																<img src="https://placehold.co/2312x1736"
-																	data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/jhs-2.jpg"
-																	title="jhs (2)" width="2312" height="1736"
-																	class="rev-slidebg" data-no-retina
-																	data-lazy-src="https://placehold.co/2312x1736"><noscript><img
-																		loading="lazy"
-																		src="https://placehold.co/2312x1736"
+																		class="rev-slidebg" data-no-retina
+																		data-lazy-src="https://placehold.co/2560x1920"><noscript><img
+																			loading="lazy"
+																			src="https://placehold.co/2560x1920"
+																			data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/jhs-1-scaled.jpg"
+																			title="jhs (1)" width="2560" height="1920"
+																			class="rev-slidebg"
+																			data-no-retina></noscript>
+																	<!----> </rs-slide>
+																<rs-slide data-key="rs-43" data-title="Slide"
+																	data-thumb="https://placehold.co/50x100"
+																	data-in="o:0;x:100%;" data-out="a:false;">
+																	<img src="https://placehold.co/2312x1736"
 																		data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/jhs-2.jpg"
 																		title="jhs (2)" width="2312" height="1736"
-																		class="rev-slidebg" data-no-retina></noscript>
-																<!----> </rs-slide>
-															<rs-slide data-key="rs-42" data-title="Slide"
-																data-thumb="https://placehold.co/50x100"
-																data-in="o:0;x:100%;" data-out="a:false;">
-																<img src="https://placehold.co/2312x1736"
-																	data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/jhs-3.jpg"
-																	title="jhs (3)" width="2312" height="1736"
-																	class="rev-slidebg" data-no-retina
-																	data-lazy-src="https://placehold.co/2312x1736"><noscript><img
-																		loading="lazy"
-																		src="https://placehold.co/2312x1736"
+																		class="rev-slidebg" data-no-retina
+																		data-lazy-src="https://placehold.co/2312x1736"><noscript><img
+																			loading="lazy"
+																			src="https://placehold.co/2312x1736"
+																			data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/jhs-2.jpg"
+																			title="jhs (2)" width="2312" height="1736"
+																			class="rev-slidebg"
+																			data-no-retina></noscript>
+																	<!----> </rs-slide>
+																<rs-slide data-key="rs-42" data-title="Slide"
+																	data-thumb="https://placehold.co/50x100"
+																	data-in="o:0;x:100%;" data-out="a:false;">
+																	<img src="https://placehold.co/2312x1736"
 																		data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/jhs-3.jpg"
 																		title="jhs (3)" width="2312" height="1736"
-																		class="rev-slidebg" data-no-retina></noscript>
-																<!----> </rs-slide>
-															<rs-slide data-key="rs-44" data-title="Slide"
-																data-thumb="https://placehold.co/50x100"
-																data-in="o:0;x:100%;" data-out="a:false;">
-																<img src="https://placehold.co/2560x1920"
-																	data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/IMG20220811085633-1-scaled.jpg"
-																	title="IMG20220811085633 (1)" width="2560"
-																	height="1920" class="rev-slidebg" data-no-retina
-																	data-lazy-src="https://placehold.co/2560x1920"><noscript><img
-																		loading="lazy"
-																		src="https://placehold.co/2560x1920"
+																		class="rev-slidebg" data-no-retina
+																		data-lazy-src="https://placehold.co/2312x1736"><noscript><img
+																			loading="lazy"
+																			src="https://placehold.co/2312x1736"
+																			data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/jhs-3.jpg"
+																			title="jhs (3)" width="2312" height="1736"
+																			class="rev-slidebg"
+																			data-no-retina></noscript>
+																	<!----> </rs-slide>
+																<rs-slide data-key="rs-44" data-title="Slide"
+																	data-thumb="https://placehold.co/50x100"
+																	data-in="o:0;x:100%;" data-out="a:false;">
+																	<img src="https://placehold.co/2560x1920"
 																		data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/IMG20220811085633-1-scaled.jpg"
 																		title="IMG20220811085633 (1)" width="2560"
-																		height="1920" class="rev-slidebg"
-																		data-no-retina></noscript>
-																<!----> </rs-slide>
-															<rs-slide data-key="rs-41" data-title="Slide"
-																data-thumb="https://placehold.co/50x100"
-																data-in="o:0;x:100%;" data-out="a:false;">
-																<img src="https://placehold.co/2560x1920"
-																	data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/jhs-5-scaled.jpg"
-																	title="jhs (5)" width="2560" height="1920"
-																	class="rev-slidebg" data-no-retina
-																	data-lazy-src="https://placehold.co/2560x1920"><noscript><img
-																		loading="lazy"
-																		src="https://placehold.co/2560x1920"
+																		height="1920" class="rev-slidebg" data-no-retina
+																		data-lazy-src="https://placehold.co/2560x1920"><noscript><img
+																			loading="lazy"
+																			src="https://placehold.co/2560x1920"
+																			data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/IMG20220811085633-1-scaled.jpg"
+																			title="IMG20220811085633 (1)" width="2560"
+																			height="1920" class="rev-slidebg"
+																			data-no-retina></noscript>
+																	<!----> </rs-slide>
+																<rs-slide data-key="rs-41" data-title="Slide"
+																	data-thumb="https://placehold.co/50x100"
+																	data-in="o:0;x:100%;" data-out="a:false;">
+																	<img src="https://placehold.co/2560x1920"
 																		data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/jhs-5-scaled.jpg"
 																		title="jhs (5)" width="2560" height="1920"
-																		class="rev-slidebg" data-no-retina></noscript>
-																<!----> </rs-slide>
-														</rs-slides>
-													</rs-module>
-													<script type="rocketlazyloadscript"
-														data-rocket-type="text/javascript">
+																		class="rev-slidebg" data-no-retina
+																		data-lazy-src="https://placehold.co/2560x1920"><noscript><img
+																			loading="lazy"
+																			src="https://placehold.co/2560x1920"
+																			data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/jhs-5-scaled.jpg"
+																			title="jhs (5)" width="2560" height="1920"
+																			class="rev-slidebg"
+																			data-no-retina></noscript>
+																	<!----> </rs-slide>
+															</rs-slides>
+														</rs-module>
+														<script type="rocketlazyloadscript"
+															data-rocket-type="text/javascript">
 					setREVStartSize({c: 'rev_slider_6_3',rl:[1240,1024,778,480],el:[342],gw:[450],gh:[342],type:'standard',justify:'',layout:'fullwidth',mh:"0"});
 					var	revapi6,
 						tpj;
@@ -6165,7 +6236,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				var once_revslider63 = false;
 				if (document.readyState === "loading") {document.addEventListener('readystatechange',function() { if((document.readyState === "interactive" || document.readyState === "complete") && !once_revslider63 ) { once_revslider63 = true; revinit_revslider63();}});} else {once_revslider63 = true; revinit_revslider63();}
 				</script>
-													<script type="rocketlazyloadscript">
+														<script type="rocketlazyloadscript">
 					var htmlDivCss = unescape("%23rev_slider_6_3_wrapper%20.hesperiden.tp-bullets%20%7B%0A%7D%0A%23rev_slider_6_3_wrapper%20.hesperiden.tp-bullets%3Abefore%20%7B%0A%09content%3A%27%20%27%3B%0A%09position%3Aabsolute%3B%0A%09width%3A100%25%3B%0A%09height%3A100%25%3B%0A%09background%3Atransparent%3B%0A%09padding%3A10px%3B%0A%09margin-left%3A-10px%3Bmargin-top%3A-10px%3B%0A%09box-sizing%3Acontent-box%3B%0A%20%20%20border-radius%3A8px%3B%0A%20%20%0A%7D%0A%23rev_slider_6_3_wrapper%20.hesperiden%20.tp-bullet%20%7B%0A%09width%3A12px%3B%0A%09height%3A12px%3B%0A%09position%3Aabsolute%3B%0A%09background%3A%20%23999999%3B%20%2F%2A%20old%20browsers%20%2A%2F%0A%20%20%20%20background%3A%20-moz-linear-gradient%28top%2C%20%20%23999999%200%25%2C%20%23e1e1e1%20100%25%29%3B%20%2F%2A%20ff3.6%2B%20%2A%2F%0A%20%20%20%20background%3A%20-webkit-linear-gradient%28top%2C%20%20%23999999%200%25%2C%23e1e1e1%20100%25%29%3B%20%2F%2A%20chrome10%2B%2Csafari5.1%2B%20%2A%2F%0A%20%20%20%20background%3A%20-o-linear-gradient%28top%2C%20%20%23999999%200%25%2C%23e1e1e1%20100%25%29%3B%20%2F%2A%20opera%2011.10%2B%20%2A%2F%0A%20%20%20%20background%3A%20-ms-linear-gradient%28top%2C%20%20%23999999%200%25%2C%23e1e1e1%20100%25%29%3B%20%2F%2A%20ie10%2B%20%2A%2F%0A%20%20%20%20background%3A%20linear-gradient%28to%20bottom%2C%20%20%23999999%200%25%2C%23e1e1e1%20100%25%29%3B%20%2F%2A%20w3c%20%2A%2F%0A%20%20%20%20filter%3A%20progid%3Adximagetransform.microsoft.gradient%28%20%0A%20%20%20%20startcolorstr%3D%27%23999999%27%2C%20endcolorstr%3D%27%23e1e1e1%27%2Cgradienttype%3D0%20%29%3B%20%2F%2A%20ie6-9%20%2A%2F%0A%09border%3A3px%20solid%20%23e5e5e5%3B%0A%09border-radius%3A50%25%3B%0A%09cursor%3A%20pointer%3B%0A%09box-sizing%3Acontent-box%3B%0A%7D%0A%23rev_slider_6_3_wrapper%20.hesperiden%20.tp-bullet%3Ahover%2C%0A%23rev_slider_6_3_wrapper%20.hesperiden%20.tp-bullet.selected%20%7B%0A%09background%3A%23666666%3B%0A%7D%0A%23rev_slider_6_3_wrapper%20.hesperiden%20.tp-bullet-image%20%7B%0A%7D%0A%23rev_slider_6_3_wrapper%20.hesperiden%20.tp-bullet-title%20%7B%0A%7D%0A%0A");
 					var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
 					if(htmlDiv) {
@@ -6176,7 +6247,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
 					}
 				</script>
-													<script type="rocketlazyloadscript">
+														<script type="rocketlazyloadscript">
 					var htmlDivCss = unescape("%0A%0A%0A%0A%0A");
 					var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
 					if(htmlDiv) {
@@ -6187,106 +6258,112 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
 					}
 				</script>
-												</rs-module-wrap>
-												<!-- END REVOLUTION SLIDER -->
+													</rs-module-wrap>
+													<!-- END REVOLUTION SLIDER -->
+												</div>
 											</div>
-										</div>
-										<div
-											class="column mcb-column mcb-item-5zljiuvfd one column_column column-margin-0px">
-											<div class="column_attr clearfix align_center" style="">
-												<h2>Life @ Jain Heritage School</h2>
-												<p>Uplifting the positive mindset created by the
-													academic curriculum and sports, an added boost
-													is provided through various student clubs.</p>
+											<div
+												class="column mcb-column mcb-item-5zljiuvfd one column_column column-margin-0px">
+												<div class="column_attr clearfix align_center" style="">
+													<h2>Life @ Jain Heritage School</h2>
+													<p>Uplifting the positive mindset created by the
+														academic curriculum and sports, an added boost
+														is provided through various student clubs.</p>
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="wrap mcb-wrap mcb-wrap-dq4148rgn one-second  valign-top clearfix" style="">
-									<div class="mcb-wrap-inner">
-										<div
-											class="column mcb-column mcb-item-6aez540hw one column_slider_plugin sliderthumbs">
-											<div class="mfn-main-slider mfn-rev-slider">
-												<!-- START Sports @ Jain REVOLUTION SLIDER 6.4.3 -->
-												<p class="rs-p-wp-fix"></p>
-												<rs-module-wrap id="rev_slider_7_4_wrapper" data-source="gallery"
-													style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
-													<rs-module id="rev_slider_7_4" style="" data-version="6.4.3">
-														<rs-slides>
-															<rs-slide data-key="rs-55" data-title="Slide"
-																data-thumb="https://placehold.co/50x100"
-																data-in="o:0;x:100%;" data-out="a:false;">
-																<img src="https://placehold.co/532x365"
-																	data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2021/03/photo-02.jpg"
-																	title="photo-02" width="532" height="365"
-																	class="rev-slidebg" data-no-retina
-																	data-lazy-src="https://placehold.co/532x365"><noscript><img
-																		loading="lazy"
-																		src="https://placehold.co/532x365"
+									<div class="wrap mcb-wrap mcb-wrap-dq4148rgn one-second  valign-top clearfix"
+										style="">
+										<div class="mcb-wrap-inner">
+											<div
+												class="column mcb-column mcb-item-6aez540hw one column_slider_plugin sliderthumbs">
+												<div class="mfn-main-slider mfn-rev-slider">
+													<!-- START Sports @ Jain REVOLUTION SLIDER 6.4.3 -->
+													<p class="rs-p-wp-fix"></p>
+													<rs-module-wrap id="rev_slider_7_4_wrapper" data-source="gallery"
+														style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
+														<rs-module id="rev_slider_7_4" style="" data-version="6.4.3">
+															<rs-slides>
+																<rs-slide data-key="rs-55" data-title="Slide"
+																	data-thumb="https://placehold.co/50x100"
+																	data-in="o:0;x:100%;" data-out="a:false;">
+																	<img src="https://placehold.co/532x365"
 																		data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2021/03/photo-02.jpg"
 																		title="photo-02" width="532" height="365"
-																		class="rev-slidebg" data-no-retina></noscript>
-																<!----> </rs-slide>
-															<rs-slide data-key="rs-51" data-title="Slide"
-																data-thumb="https://placehold.co/50x100"
-																data-in="o:0;x:100%;" data-out="a:false;">
-																<img src="https://placehold.co/532x365"
-																	data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2021/03/photo-02-4.jpg"
-																	title="photo-02-4" width="532" height="365"
-																	class="rev-slidebg" data-no-retina
-																	data-lazy-src="https://placehold.co/532x365"><noscript><img
-																		loading="lazy"
-																		src="https://placehold.co/532x365"
+																		class="rev-slidebg" data-no-retina
+																		data-lazy-src="https://placehold.co/532x365"><noscript><img
+																			loading="lazy"
+																			src="https://placehold.co/532x365"
+																			data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2021/03/photo-02.jpg"
+																			title="photo-02" width="532" height="365"
+																			class="rev-slidebg"
+																			data-no-retina></noscript>
+																	<!----> </rs-slide>
+																<rs-slide data-key="rs-51" data-title="Slide"
+																	data-thumb="https://placehold.co/50x100"
+																	data-in="o:0;x:100%;" data-out="a:false;">
+																	<img src="https://placehold.co/532x365"
 																		data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2021/03/photo-02-4.jpg"
 																		title="photo-02-4" width="532" height="365"
-																		class="rev-slidebg" data-no-retina></noscript>
-																<!----> </rs-slide>
-															<rs-slide data-key="rs-54" data-title="Slide"
-																data-thumb="https://placehold.co/50x100"
-																data-in="o:0;x:100%;" data-out="a:false;">
-																<img src="https://placehold.co/532x365"
-																	data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2021/03/photo-02-1.jpg"
-																	title="photo-02-1" width="532" height="365"
-																	class="rev-slidebg" data-no-retina
-																	data-lazy-src="https://placehold.co/532x365"><noscript><img
-																		loading="lazy"
-																		src="https://placehold.co/532x365"
+																		class="rev-slidebg" data-no-retina
+																		data-lazy-src="https://placehold.co/532x365"><noscript><img
+																			loading="lazy"
+																			src="https://placehold.co/532x365"
+																			data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2021/03/photo-02-4.jpg"
+																			title="photo-02-4" width="532" height="365"
+																			class="rev-slidebg"
+																			data-no-retina></noscript>
+																	<!----> </rs-slide>
+																<rs-slide data-key="rs-54" data-title="Slide"
+																	data-thumb="https://placehold.co/50x100"
+																	data-in="o:0;x:100%;" data-out="a:false;">
+																	<img src="https://placehold.co/532x365"
 																		data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2021/03/photo-02-1.jpg"
 																		title="photo-02-1" width="532" height="365"
-																		class="rev-slidebg" data-no-retina></noscript>
-																<!----> </rs-slide>
-															<rs-slide data-key="rs-52" data-title="Slide"
-																data-thumb="https://placehold.co/50x100"
-																data-in="o:0;x:100%;" data-out="a:false;">
-																<img src="https://placehold.co/532x365"
-																	data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2021/03/photo-02-3.jpg"
-																	title="photo-02-3" width="532" height="365"
-																	class="rev-slidebg" data-no-retina
-																	data-lazy-src="https://placehold.co/532x365"><noscript><img
-																		loading="lazy"
-																		src="https://placehold.co/532x365"
+																		class="rev-slidebg" data-no-retina
+																		data-lazy-src="https://placehold.co/532x365"><noscript><img
+																			loading="lazy"
+																			src="https://placehold.co/532x365"
+																			data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2021/03/photo-02-1.jpg"
+																			title="photo-02-1" width="532" height="365"
+																			class="rev-slidebg"
+																			data-no-retina></noscript>
+																	<!----> </rs-slide>
+																<rs-slide data-key="rs-52" data-title="Slide"
+																	data-thumb="https://placehold.co/50x100"
+																	data-in="o:0;x:100%;" data-out="a:false;">
+																	<img src="https://placehold.co/532x365"
 																		data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2021/03/photo-02-3.jpg"
 																		title="photo-02-3" width="532" height="365"
-																		class="rev-slidebg" data-no-retina></noscript>
-																<!----> </rs-slide>
-															<rs-slide data-key="rs-53" data-title="Slide"
-																data-thumb="https://placehold.co/50x100"
-																data-in="o:0;x:100%;" data-out="a:false;">
-																<img src="https://placehold.co/532x365"
-																	data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2021/03/photo-02-2.jpg"
-																	title="photo-02-2" width="532" height="365"
-																	class="rev-slidebg" data-no-retina
-																	data-lazy-src="https://placehold.co/532x365"><noscript><img
-																		loading="lazy"
-																		src="https://placehold.co/532x365"
+																		class="rev-slidebg" data-no-retina
+																		data-lazy-src="https://placehold.co/532x365"><noscript><img
+																			loading="lazy"
+																			src="https://placehold.co/532x365"
+																			data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2021/03/photo-02-3.jpg"
+																			title="photo-02-3" width="532" height="365"
+																			class="rev-slidebg"
+																			data-no-retina></noscript>
+																	<!----> </rs-slide>
+																<rs-slide data-key="rs-53" data-title="Slide"
+																	data-thumb="https://placehold.co/50x100"
+																	data-in="o:0;x:100%;" data-out="a:false;">
+																	<img src="https://placehold.co/532x365"
 																		data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2021/03/photo-02-2.jpg"
 																		title="photo-02-2" width="532" height="365"
-																		class="rev-slidebg" data-no-retina></noscript>
-																<!----> </rs-slide>
-														</rs-slides>
-													</rs-module>
-													<script type="rocketlazyloadscript"
-														data-rocket-type="text/javascript">
+																		class="rev-slidebg" data-no-retina
+																		data-lazy-src="https://placehold.co/532x365"><noscript><img
+																			loading="lazy"
+																			src="https://placehold.co/532x365"
+																			data-original-src="http://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2021/03/photo-02-2.jpg"
+																			title="photo-02-2" width="532" height="365"
+																			class="rev-slidebg"
+																			data-no-retina></noscript>
+																	<!----> </rs-slide>
+															</rs-slides>
+														</rs-module>
+														<script type="rocketlazyloadscript"
+															data-rocket-type="text/javascript">
 					setREVStartSize({c: 'rev_slider_7_4',rl:[1240,1024,778,480],el:[342],gw:[450],gh:[342],type:'standard',justify:'',layout:'fullwidth',mh:"0"});
 					var	revapi7,
 						tpj;
@@ -6328,7 +6405,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				var once_revslider74 = false;
 				if (document.readyState === "loading") {document.addEventListener('readystatechange',function() { if((document.readyState === "interactive" || document.readyState === "complete") && !once_revslider74 ) { once_revslider74 = true; revinit_revslider74();}});} else {once_revslider74 = true; revinit_revslider74();}
 				</script>
-													<script type="rocketlazyloadscript">
+														<script type="rocketlazyloadscript">
 					var htmlDivCss = unescape("%23rev_slider_7_4_wrapper%20.hesperiden.tp-bullets%20%7B%0A%7D%0A%23rev_slider_7_4_wrapper%20.hesperiden.tp-bullets%3Abefore%20%7B%0A%09content%3A%27%20%27%3B%0A%09position%3Aabsolute%3B%0A%09width%3A100%25%3B%0A%09height%3A100%25%3B%0A%09background%3Atransparent%3B%0A%09padding%3A10px%3B%0A%09margin-left%3A-10px%3Bmargin-top%3A-10px%3B%0A%09box-sizing%3Acontent-box%3B%0A%20%20%20border-radius%3A8px%3B%0A%20%20%0A%7D%0A%23rev_slider_7_4_wrapper%20.hesperiden%20.tp-bullet%20%7B%0A%09width%3A12px%3B%0A%09height%3A12px%3B%0A%09position%3Aabsolute%3B%0A%09background%3A%20%23999999%3B%20%2F%2A%20old%20browsers%20%2A%2F%0A%20%20%20%20background%3A%20-moz-linear-gradient%28top%2C%20%20%23999999%200%25%2C%20%23e1e1e1%20100%25%29%3B%20%2F%2A%20ff3.6%2B%20%2A%2F%0A%20%20%20%20background%3A%20-webkit-linear-gradient%28top%2C%20%20%23999999%200%25%2C%23e1e1e1%20100%25%29%3B%20%2F%2A%20chrome10%2B%2Csafari5.1%2B%20%2A%2F%0A%20%20%20%20background%3A%20-o-linear-gradient%28top%2C%20%20%23999999%200%25%2C%23e1e1e1%20100%25%29%3B%20%2F%2A%20opera%2011.10%2B%20%2A%2F%0A%20%20%20%20background%3A%20-ms-linear-gradient%28top%2C%20%20%23999999%200%25%2C%23e1e1e1%20100%25%29%3B%20%2F%2A%20ie10%2B%20%2A%2F%0A%20%20%20%20background%3A%20linear-gradient%28to%20bottom%2C%20%20%23999999%200%25%2C%23e1e1e1%20100%25%29%3B%20%2F%2A%20w3c%20%2A%2F%0A%20%20%20%20filter%3A%20progid%3Adximagetransform.microsoft.gradient%28%20%0A%20%20%20%20startcolorstr%3D%27%23999999%27%2C%20endcolorstr%3D%27%23e1e1e1%27%2Cgradienttype%3D0%20%29%3B%20%2F%2A%20ie6-9%20%2A%2F%0A%09border%3A3px%20solid%20%23e5e5e5%3B%0A%09border-radius%3A50%25%3B%0A%09cursor%3A%20pointer%3B%0A%09box-sizing%3Acontent-box%3B%0A%7D%0A%23rev_slider_7_4_wrapper%20.hesperiden%20.tp-bullet%3Ahover%2C%0A%23rev_slider_7_4_wrapper%20.hesperiden%20.tp-bullet.selected%20%7B%0A%09background%3A%23666666%3B%0A%7D%0A%23rev_slider_7_4_wrapper%20.hesperiden%20.tp-bullet-image%20%7B%0A%7D%0A%23rev_slider_7_4_wrapper%20.hesperiden%20.tp-bullet-title%20%7B%0A%7D%0A%0A");
 					var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
 					if(htmlDiv) {
@@ -6339,7 +6416,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
 					}
 				</script>
-													<script type="rocketlazyloadscript">
+														<script type="rocketlazyloadscript">
 					var htmlDivCss = unescape("%0A%0A%0A%0A%0A");
 					var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
 					if(htmlDiv) {
@@ -6350,307 +6427,345 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
 					}
 				</script>
-												</rs-module-wrap>
-												<!-- END REVOLUTION SLIDER -->
+													</rs-module-wrap>
+													<!-- END REVOLUTION SLIDER -->
+												</div>
 											</div>
-										</div>
-										<div
-											class="column mcb-column mcb-item-twovaolz4 one column_column column-margin-0px">
-											<div class="column_attr clearfix align_center" style="">
-												<h2>Sports @ Jain Heritage School</h2>
-												<p>World-class facilities and training
-													by expert coaches and
-													world-renowned mentors.</p>
+											<div
+												class="column mcb-column mcb-item-twovaolz4 one column_column column-margin-0px">
+												<div class="column_attr clearfix align_center" style="">
+													<h2>Sports @ Jain Heritage School</h2>
+													<p>World-class facilities and training
+														by expert coaches and
+														world-renowned mentors.</p>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="section mcb-section mcb-section-auuk6uvou  dark bg-cover" id="recent-events"
-							style="padding-top:60px;padding-bottom:40px;background-image:url(https://placehold.co/1200x800);background-repeat:no-repeat;background-position:center">
-							<div class="section_wrapper mcb-section-inner">
-								<div class="wrap mcb-wrap mcb-wrap-1rwklmeec one  valign-top clearfix" style="">
-									<div class="mcb-wrap-inner">
-										<div
-											class="column mcb-column mcb-item-evpcks8f9 one column_column column-margin-40px">
-											<div class="column_attr clearfix align_center animate"
-												data-anim-type="fadeInRight" style="">
-												<h3><strong>Recent Events @ Jain Heritage School</strong></h3>
+							<div class="section mcb-section mcb-section-auuk6uvou  dark bg-cover" id="recent-events"
+								style="padding-top:60px;padding-bottom:40px;background-image:url(https://placehold.co/1200x800);background-repeat:no-repeat;background-position:center">
+								<div class="section_wrapper mcb-section-inner">
+									<div class="wrap mcb-wrap mcb-wrap-1rwklmeec one  valign-top clearfix" style="">
+										<div class="mcb-wrap-inner">
+											<div
+												class="column mcb-column mcb-item-evpcks8f9 one column_column column-margin-40px">
+												<div class="column_attr clearfix align_center animate"
+													data-anim-type="fadeInRight" style="">
+													<h3><strong>Recent Events @ Jain Heritage School</strong></h3>
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="wrap mcb-wrap mcb-wrap-8c37b9737 one  valign-top clearfix" style="">
-									<div class="mcb-wrap-inner">
-										<div
-											class="column mcb-column mcb-item-0457476ce one-third column_story_box event-one">
-											<div class="story_box ">
-												<div class="photo_wrapper"><img width="1599" height="1200"
-														class="scale-with-grid" src="https://placehold.co/1599x1200"
-														data-original-src="https://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/WhatsApp-Image-2022-10-19-at-11.06.07-AM.jpg"
-														alt="Home Page" /></div>
-												<div class="desc_wrapper"></div>
-												<div class="desc"><strong>Field Trip:</strong><br />
-													A supermarket is a place where preprimary school children happily
-													learn about different kinds of foods. Our children went on a field
-													trip to a supermarket in Whitefield today.</div>
+									<div class="wrap mcb-wrap mcb-wrap-8c37b9737 one  valign-top clearfix" style="">
+										<div class="mcb-wrap-inner">
+											<div
+												class="column mcb-column mcb-item-0457476ce one-third column_story_box event-one">
+												<div class="story_box ">
+													<div class="photo_wrapper"><img width="1599" height="1200"
+															class="scale-with-grid" src="https://placehold.co/1599x1200"
+															data-original-src="https://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/WhatsApp-Image-2022-10-19-at-11.06.07-AM.jpg"
+															alt="Home Page" /></div>
+													<div class="desc_wrapper"></div>
+													<div class="desc"><strong>Field Trip:</strong><br />
+														A supermarket is a place where preprimary school children
+														happily
+														learn about different kinds of foods. Our children went on a
+														field
+														trip to a supermarket in Whitefield today.</div>
+												</div>
 											</div>
-										</div>
-										<div
-											class="column mcb-column mcb-item-5c4923db5 one-third column_story_box event-two">
-											<div class="story_box ">
-												<div class="photo_wrapper"><img width="1600" height="1200"
-														class="scale-with-grid" src="https://placehold.co/1600x1200"
-														data-original-src="https://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/fd.jpg"
-														alt="Home Page" /></div>
-												<div class="desc_wrapper"></div>
-												<div class="desc"><strong>Diwali:</strong><br />
-													Our corridors were full of laughter, banter and joy, as we
-													celebrated the essence of Diwali with our Pre primary children along
-													with the parents through Rangoli, art and colours.</div>
+											<div
+												class="column mcb-column mcb-item-5c4923db5 one-third column_story_box event-two">
+												<div class="story_box ">
+													<div class="photo_wrapper"><img width="1600" height="1200"
+															class="scale-with-grid" src="https://placehold.co/1600x1200"
+															data-original-src="https://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/fd.jpg"
+															alt="Home Page" /></div>
+													<div class="desc_wrapper"></div>
+													<div class="desc"><strong>Diwali:</strong><br />
+														Our corridors were full of laughter, banter and joy, as we
+														celebrated the essence of Diwali with our Pre primary children
+														along
+														with the parents through Rangoli, art and colours.</div>
+												</div>
 											</div>
-										</div>
-										<div
-											class="column mcb-column mcb-item-96d9b758b one-third column_story_box event-three">
-											<div class="story_box ">
-												<div class="photo_wrapper"><img width="1600" height="1200"
-														class="scale-with-grid" src="https://placehold.co/1600x1200"
-														data-original-src="https://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/311800351_478360324330223_2873886692781282713_n.jpg"
-														alt="Home Page" /></div>
-												<div class="desc_wrapper"></div>
-												<div class="desc"><strong>Fancy Dress Competition:</strong><br />
-													Each child is blessed with talents which are unique and to bring out
-													these hidden talents, a fancy dress competition was held for the
-													students .</div>
+											<div
+												class="column mcb-column mcb-item-96d9b758b one-third column_story_box event-three">
+												<div class="story_box ">
+													<div class="photo_wrapper"><img width="1600" height="1200"
+															class="scale-with-grid" src="https://placehold.co/1600x1200"
+															data-original-src="https://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/11/311800351_478360324330223_2873886692781282713_n.jpg"
+															alt="Home Page" /></div>
+													<div class="desc_wrapper"></div>
+													<div class="desc"><strong>Fancy Dress Competition:</strong><br />
+														Each child is blessed with talents which are unique and to bring
+														out
+														these hidden talents, a fancy dress competition was held for the
+														students .</div>
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="wrap mcb-wrap mcb-wrap-fl85fm0qf one  valign-top clearfix" style="">
-									<div class="mcb-wrap-inner">
-										<div class="column mcb-column mcb-item-sst1vs3y5 one column_column">
-											<div class="column_attr clearfix align_center" style=""><a
-													href="#popup-6a60ae1a02bea" rel="prettyphoto"
-													class="popup-link button"><span class="button_label">ENQUIRE FOR
-														ADMISSION</span></a>
-												<div id="popup-6a60ae1a02bea" class="popup-content">
-													<div class="popup-inner" style="padding:20px;">
-														<h3><strong>ENQUIRE FOR ADMISSION</strong></h3>
-														<form class="enquiry-form" action="#" method="POST" style="height:510px;width:100%;overflow-y:auto;padding:25px;background:#ffffff;border-radius:6px;font-family:Open Sans,Arial,sans-serif;box-sizing:border-box;">
-														<div style="max-width:500px;margin:0 auto;">
-															<h3 style="text-align:center;color:#f98400;margin-bottom:20px;font-size:20px;">Enquire for Admission</h3>
-															<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px 15px;">
-																<div>
-																	<label style="display:block;font-weight:600;color:#333;margin-bottom:4px;font-size:12px;">Name <span style="color:red;">*</span></label>
-																	<input type="text" name="name" required placeholder="Your name" style="width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:4px;font-size:13px;box-sizing:border-box;">
+									<div class="wrap mcb-wrap mcb-wrap-fl85fm0qf one  valign-top clearfix" style="">
+										<div class="mcb-wrap-inner">
+											<div class="column mcb-column mcb-item-sst1vs3y5 one column_column">
+												<div class="column_attr clearfix align_center" style=""><a
+														href="#popup-6a60ae1a02bea" rel="prettyphoto"
+														class="popup-link button"><span class="button_label">ENQUIRE FOR
+															ADMISSION</span></a>
+													<div id="popup-6a60ae1a02bea" class="popup-content">
+														<div class="popup-inner" style="padding:20px;">
+															<h3><strong>ENQUIRE FOR ADMISSION</strong></h3>
+															<form class="enquiry-form" action="#" method="POST"
+																style="height:510px;width:100%;overflow-y:auto;padding:25px;background:#ffffff;border-radius:6px;font-family:Open Sans,Arial,sans-serif;box-sizing:border-box;">
+																<div style="max-width:500px;margin:0 auto;">
+																	<h3
+																		style="text-align:center;color:#f98400;margin-bottom:20px;font-size:20px;">
+																		Enquire for Admission</h3>
+																	<div
+																		style="display:grid;grid-template-columns:1fr 1fr;gap:12px 15px;">
+																		<div>
+																			<label
+																				style="display:block;font-weight:600;color:#333;margin-bottom:4px;font-size:12px;">Name
+																				<span
+																					style="color:red;">*</span></label>
+																			<input type="text" name="name" required
+																				placeholder="Your name"
+																				style="width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:4px;font-size:13px;box-sizing:border-box;">
+																		</div>
+																		<div>
+																			<label
+																				style="display:block;font-weight:600;color:#333;margin-bottom:4px;font-size:12px;">Phone
+																				<span
+																					style="color:red;">*</span></label>
+																			<input type="tel" name="phone" required
+																				placeholder="+91 98765 43210"
+																				style="width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:4px;font-size:13px;box-sizing:border-box;">
+																		</div>
+																		<div style="grid-column:1 / -1;">
+																			<label
+																				style="display:block;font-weight:600;color:#333;margin-bottom:4px;font-size:12px;">Email
+																				<span
+																					style="color:red;">*</span></label>
+																			<input type="email" name="email" required
+																				placeholder="your.email@example.com"
+																				style="width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:4px;font-size:13px;box-sizing:border-box;">
+																		</div>
+																		<div style="grid-column:1 / -1;">
+																			<label
+																				style="display:block;font-weight:600;color:#333;margin-bottom:4px;font-size:12px;">Grade
+																				Interested</label>
+																			<select name="grade"
+																				style="width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:4px;font-size:13px;box-sizing:border-box;background:white;">
+																				<option value="">Select Grade</option>
+																				<option>Pre-School</option>
+																				<option>Kindergarten</option>
+																				<option>Grade 1</option>
+																				<option>Grade 2</option>
+																				<option>Grade 3</option>
+																				<option>Grade 4</option>
+																				<option>Grade 5</option>
+																				<option>Grade 6</option>
+																				<option>Grade 7</option>
+																				<option>Grade 8</option>
+																				<option>Grade 9</option>
+																			</select>
+																		</div>
+																	</div>
+																	<div style="margin-top:15px;text-align:center;">
+																		<button type="submit"
+																			style="background:linear-gradient(135deg,#f98400,#e67300);color:#fff;border:none;padding:10px 40px;font-size:14px;font-weight:700;border-radius:5px;cursor:pointer;text-transform:uppercase;letter-spacing:0.5px;box-shadow:0 3px 10px rgba(249,132,0,0.3);">Send
+																			Enquiry</button>
+																	</div>
 																</div>
-																<div>
-																	<label style="display:block;font-weight:600;color:#333;margin-bottom:4px;font-size:12px;">Phone <span style="color:red;">*</span></label>
-																	<input type="tel" name="phone" required placeholder="+91 98765 43210" style="width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:4px;font-size:13px;box-sizing:border-box;">
-																</div>
-																<div style="grid-column:1 / -1;">
-																	<label style="display:block;font-weight:600;color:#333;margin-bottom:4px;font-size:12px;">Email <span style="color:red;">*</span></label>
-																	<input type="email" name="email" required placeholder="your.email@example.com" style="width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:4px;font-size:13px;box-sizing:border-box;">
-																</div>
-																<div style="grid-column:1 / -1;">
-																	<label style="display:block;font-weight:600;color:#333;margin-bottom:4px;font-size:12px;">Grade Interested</label>
-																	<select name="grade" style="width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:4px;font-size:13px;box-sizing:border-box;background:white;">
-																		<option value="">Select Grade</option>
-																		<option>Pre-School</option><option>Kindergarten</option>
-																		<option>Grade 1</option><option>Grade 2</option><option>Grade 3</option>
-																		<option>Grade 4</option><option>Grade 5</option><option>Grade 6</option>
-																		<option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
-																	</select>
-																</div>
-															</div>
-															<div style="margin-top:15px;text-align:center;">
-																<button type="submit" style="background:linear-gradient(135deg,#f98400,#e67300);color:#fff;border:none;padding:10px 40px;font-size:14px;font-weight:700;border-radius:5px;cursor:pointer;text-transform:uppercase;letter-spacing:0.5px;box-shadow:0 3px 10px rgba(249,132,0,0.3);">Send Enquiry</button>
-															</div>
+															</form>
 														</div>
-													</form>
+													</div>
+
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="section mcb-section mcb-section-ina9sclxv bg-cover" id="testimonials"
+								style="padding-top:100px;padding-bottom:40px;background-image:url(https://placehold.co/1200x800);background-repeat:no-repeat;background-position:center bottom">
+								<div class="section_wrapper mcb-section-inner">
+									<div class="wrap mcb-wrap mcb-wrap-jk8yrw95m one  valign-top clearfix" style="">
+										<div class="mcb-wrap-inner">
+											<div class="column mcb-column mcb-item-igjsau3vt one column_column">
+												<div class="column_attr clearfix align_center animate"
+													data-anim-type="zoomIn" style="">
+													<h3><strong>Parent Testimonials</strong></h3>
+												</div>
+											</div>
+											<div
+												class="column mcb-column mcb-item-8d54gwzqc one-fourth column_placeholder">
+												<div class="placeholder">&nbsp;</div>
+											</div>
+											<div class="column mcb-column mcb-item-sa40t4eq1 one-second column_image">
+												<div
+													class="image_frame image_item scale-with-grid no_border hover-disable">
+													<div class="image_wrapper"><a href="https://youtu.be/Zay8aG4cNFs"
+															rel="prettyphoto">
+															<div class="mask"></div><img width="600" height="338"
+																class="scale-with-grid"
+																src="https://placehold.co/600x338"
+																data-original-src="https://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/10/Testimonial-Video-1-thumbnail.jpg"
+																alt="Home Page" title="" />
+														</a>
+														<div class="image_links "><a href="https://youtu.be/Zay8aG4cNFs"
+																class="zoom" rel="prettyphoto"><i
+																	class="icon-search"></i></a></div>
 													</div>
 												</div>
-
-
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="section mcb-section mcb-section-ina9sclxv bg-cover" id="testimonials"
-							style="padding-top:100px;padding-bottom:40px;background-image:url(https://placehold.co/1200x800);background-repeat:no-repeat;background-position:center bottom">
-							<div class="section_wrapper mcb-section-inner">
-								<div class="wrap mcb-wrap mcb-wrap-jk8yrw95m one  valign-top clearfix" style="">
-									<div class="mcb-wrap-inner">
-										<div class="column mcb-column mcb-item-igjsau3vt one column_column">
-											<div class="column_attr clearfix align_center animate"
-												data-anim-type="zoomIn" style="">
-												<h3><strong>Parent Testimonials</strong></h3>
-											</div>
-										</div>
-										<div class="column mcb-column mcb-item-8d54gwzqc one-fourth column_placeholder">
-											<div class="placeholder">&nbsp;</div>
-										</div>
-										<div class="column mcb-column mcb-item-sa40t4eq1 one-second column_image">
-											<div class="image_frame image_item scale-with-grid no_border hover-disable">
-												<div class="image_wrapper"><a href="https://youtu.be/Zay8aG4cNFs"
-														rel="prettyphoto">
-														<div class="mask"></div><img width="600" height="338"
-															class="scale-with-grid" src="https://placehold.co/600x338"
-															data-original-src="https://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2022/10/Testimonial-Video-1-thumbnail.jpg"
-															alt="Home Page" title="" />
-													</a>
-													<div class="image_links "><a href="https://youtu.be/Zay8aG4cNFs"
-															class="zoom" rel="prettyphoto"><i
-																class="icon-search"></i></a></div>
-												</div>
-											</div>
-										</div>
+							<div class="section the_content no_content">
+								<div class="section_wrapper">
+									<div class="the_content_wrapper "></div>
+								</div>
+							</div>
+							<div class="section section-page-footer">
+								<div class="section_wrapper clearfix">
+
+									<div class="column one page-pager">
 									</div>
+
 								</div>
 							</div>
-						</div>
-						<div class="section the_content no_content">
-							<div class="section_wrapper">
-								<div class="the_content_wrapper "></div>
-							</div>
-						</div>
-						<div class="section section-page-footer">
-							<div class="section_wrapper clearfix">
 
-								<div class="column one page-pager">
+						</div>
+
+
+					</div>
+
+
+				</div>
+			</div>
+
+
+			<!-- mfn_hook_content_after --><!-- mfn_hook_content_after -->
+
+			<footer data-wpr-lazyrender="1" id="Footer" class="clearfix ">
+
+				<div class="footer_action">
+					<div class="container">
+						<div class="column one column_column">
+							<img width="449" height="54" src="https://placehold.co/449x54"
+								data-original-src="https://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2021/03/logo-1.png" />
+						</div>
+					</div>
+				</div>
+
+				<div class="widgets_wrapper ">
+					<div class="container">
+						<div class="column one-third">
+							<aside id="custom_html-6" class="widget_text widget widget_custom_html">
+								<h4>LOCATION ADDRESS</h4>
+								<div class="textwidget custom-html-widget">
+									<p>
+										Jain Heritage School<br>
+										Sy. No. 190, Kannamangala Village<br>
+										Bidarahalli Hobli, Whitefield,<br>
+										Bangalore East, Pin : 560067
+
+									</p>
 								</div>
-
-							</div>
+							</aside>
 						</div>
-
+						<div class="column one-third">
+							<aside id="custom_html-5" class="widget_text widget widget_custom_html">
+								<h4>EMAIL ADDRESS</h4>
+								<div class="textwidget custom-html-widget">
+									<p>
+										admissions@jainheritageschool.com
+									</p>
+								</div>
+							</aside>
+						</div>
+						<div class="column one-third">
+							<aside id="custom_html-3" class="widget_text widget widget_custom_html">
+								<h4>CONTACT WITH US</h4>
+								<div class="textwidget custom-html-widget">
+									<p>
+										Phone: <a href="tel:+91 895 136 1982">+91 895 136 1982</a>
+									</p>
+								</div>
+							</aside>
+						</div>
 					</div>
+				</div>
+
+				<div class="footer_copy">
+					<div class="container">
+						<div class="column one">
 
 
+							<div class="copyright">
+								© 2025 Jain Heritage School | Designed by <a href="https://digigro.tech/"
+									target="_blank">DigiGro</a> </div>
+
+							<ul class="social"></ul>
+						</div>
+					</div>
 				</div>
 
 
-			</div>
+
+			</footer>
+
 		</div>
 
-
-		<!-- mfn_hook_content_after --><!-- mfn_hook_content_after -->
-
-		<footer data-wpr-lazyrender="1" id="Footer" class="clearfix ">
-
-			<div class="footer_action">
-				<div class="container">
-					<div class="column one column_column">
-						<img width="449" height="54" src="https://placehold.co/449x54"
-							data-original-src="https://jainheritageschool.com/admissions-2026-27/wp-content/uploads/2021/03/logo-1.png" />
-					</div>
-				</div>
+		<div id="Side_slide" class="right dark" data-width="250">
+			<div class="close-wrapper"><a href="#" class="close"><i class="icon-cancel-fine"></i></a></div>
+			<div class="extras">
+				<div class="extras-wrapper"></div>
 			</div>
-
-			<div class="widgets_wrapper ">
-				<div class="container">
-					<div class="column one-third">
-						<aside id="custom_html-6" class="widget_text widget widget_custom_html">
-							<h4>LOCATION ADDRESS</h4>
-							<div class="textwidget custom-html-widget">
-								<p>
-									Jain Heritage School<br>
-									Sy. No. 190, Kannamangala Village<br>
-									Bidarahalli Hobli, Whitefield,<br>
-									Bangalore East, Pin : 560067
-
-								</p>
-							</div>
-						</aside>
-					</div>
-					<div class="column one-third">
-						<aside id="custom_html-5" class="widget_text widget widget_custom_html">
-							<h4>EMAIL ADDRESS</h4>
-							<div class="textwidget custom-html-widget">
-								<p>
-									admissions@jainheritageschool.com
-								</p>
-							</div>
-						</aside>
-					</div>
-					<div class="column one-third">
-						<aside id="custom_html-3" class="widget_text widget widget_custom_html">
-							<h4>CONTACT WITH US</h4>
-							<div class="textwidget custom-html-widget">
-								<p>
-									Phone: <a href="tel:+91 895 136 1982">+91 895 136 1982</a>
-								</p>
-							</div>
-						</aside>
-					</div>
-				</div>
-			</div>
-
-			<div class="footer_copy">
-				<div class="container">
-					<div class="column one">
-
-
-						<div class="copyright">
-							© 2025 Jain Heritage School | Designed by <a href="https://digigro.tech/"
-								target="_blank">DigiGro</a> </div>
-
-						<ul class="social"></ul>
-					</div>
-				</div>
-			</div>
-
-
-
-		</footer>
-
-	</div>
-
-	<div id="Side_slide" class="right dark" data-width="250">
-		<div class="close-wrapper"><a href="#" class="close"><i class="icon-cancel-fine"></i></a></div>
-		<div class="extras">
-			<div class="extras-wrapper"></div>
+			<div class="lang-wrapper"></div>
+			<div class="menu_wrapper"></div>
+			<ul class="social"></ul>
 		</div>
-		<div class="lang-wrapper"></div>
-		<div class="menu_wrapper"></div>
-		<ul class="social"></ul>
-	</div>
-	<div id="body_overlay"></div>
-	<a id="back_to_top" class="footer_button sticky scroll" href="#"><i class="icon-up-open-big"></i></a>
+		<div id="body_overlay"></div>
+		<a id="back_to_top" class="footer_button sticky scroll" href="#"><i class="icon-up-open-big"></i></a>
 
-	<!-- mfn_hook_bottom --><!-- mfn_hook_bottom -->
-	<script type="speculationrules">
+		<!-- mfn_hook_bottom --><!-- mfn_hook_bottom -->
+		<script type="speculationrules">
 {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/admissions-2026-27\/*"},{"not":{"href_matches":["\/admissions-2026-27\/wp-*.php","\/admissions-2026-27\/wp-admin\/*","\/admissions-2026-27\/wp-content\/uploads\/*","\/admissions-2026-27\/wp-content\/*","\/admissions-2026-27\/wp-content\/plugins\/*","\/admissions-2026-27\/wp-content\/themes\/betheme\/*","\/admissions-2026-27\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
 </script>
-	<div id="pum-175" class="pum pum-overlay pum-theme-166 pum-theme-lightbox popmake-overlay click_open"
-		data-popmake="{&quot;id&quot;:175,&quot;slug&quot;:&quot;download-brochure&quot;,&quot;theme_id&quot;:166,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;cookie_name&quot;:&quot;&quot;,&quot;extra_selectors&quot;:&quot;a[href$=\&quot;download\&quot;]&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;auto&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}"
-		role="dialog" aria-hidden="true">
+		<div id="pum-175" class="pum pum-overlay pum-theme-166 pum-theme-lightbox popmake-overlay click_open"
+			data-popmake="{&quot;id&quot;:175,&quot;slug&quot;:&quot;download-brochure&quot;,&quot;theme_id&quot;:166,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;cookie_name&quot;:&quot;&quot;,&quot;extra_selectors&quot;:&quot;a[href$=\&quot;download\&quot;]&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;auto&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}"
+			role="dialog" aria-hidden="true">
 
-		<div id="popmake-175" class="pum-container popmake theme-166">
-
-
+			<div id="popmake-175" class="pum-container popmake theme-166">
 
 
 
 
 
-			<div class="pum-content popmake-content" tabindex="0">
-				<h4>Fill in your details and download the Prospectus.</h4>
-				
+
+
+				<div class="pum-content popmake-content" tabindex="0">
+					<h4>Fill in your details and download the Prospectus.</h4>
+
+				</div>
+
+
+
+
+				<button type="button" class="pum-close popmake-close" aria-label="Close">
+					&times; </button>
+
 			</div>
 
-
-
-
-			<button type="button" class="pum-close popmake-close" aria-label="Close">
-				&times; </button>
-
 		</div>
-
-	</div>
-	<script type="rocketlazyloadscript">
+		<script type="rocketlazyloadscript">
 				const lazyloadRunObserver = () => {
 					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
 					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
@@ -6678,7 +6793,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</script>
 
 
-	<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
 		if(typeof revslider_showDoubleJqueryError === "undefined") {
 			function revslider_showDoubleJqueryError(sliderID) {
 				var err = "<div class='rs_error_message_box'>";
@@ -6693,7 +6808,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			}
 		}
 		</script>
-	<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
 		if(typeof revslider_showDoubleJqueryError === "undefined") {
 			function revslider_showDoubleJqueryError(sliderID) {
 				var err = "<div class='rs_error_message_box'>";
@@ -6708,7 +6823,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			}
 		}
 		</script>
-	<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
 		if(typeof revslider_showDoubleJqueryError === "undefined") {
 			function revslider_showDoubleJqueryError(sliderID) {
 				var err = "<div class='rs_error_message_box'>";
@@ -6723,7 +6838,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			}
 		}
 		</script>
-	<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
 		if(typeof revslider_showDoubleJqueryError === "undefined") {
 			function revslider_showDoubleJqueryError(sliderID) {
 				var err = "<div class='rs_error_message_box'>";
@@ -6738,81 +6853,81 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			}
 		}
 		</script>
-	<script type="text/javascript" id="wpcf7-redirect-script-js-extra">
-		/* <![CDATA[ */
-		var wpcf7_redirect_forms = { "1895": { "page_id": "593", "external_url": "", "use_external_url": "", "open_in_new_tab": "", "http_build_query": "", "http_build_query_selectively": "", "http_build_query_selectively_fields": "", "delay_redirect": "0", "after_sent_script": "", "thankyou_page_url": "https:\/\/jainheritageschool.com\/admissions-2026-27\/thank-you\/" }, "178": { "page_id": "593", "external_url": "", "use_external_url": "", "open_in_new_tab": "", "http_build_query": "", "http_build_query_selectively": "", "http_build_query_selectively_fields": "", "delay_redirect": "0", "after_sent_script": "", "thankyou_page_url": "https:\/\/jainheritageschool.com\/admissions-2026-27\/thank-you\/" }, "20": { "page_id": "593", "external_url": "", "use_external_url": "", "open_in_new_tab": "", "http_build_query": "", "http_build_query_selectively": "", "http_build_query_selectively_fields": "", "delay_redirect": "0", "after_sent_script": "", "thankyou_page_url": "https:\/\/jainheritageschool.com\/admissions-2026-27\/thank-you\/" } };
-		/* ]]> */
-	</script>
-	<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript"
-		data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-content/cache/min/1/admissions-2026-27/wp-content/plugins/cf7-redirection/js/wpcf7-redirect-script.js?ver=1765272384"
-		id="wpcf7-redirect-script-js" data-rocket-defer defer></script>
-	<script type="rocketlazyloadscript" data-rocket-type="text/javascript"
-		data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0"
-		id="wp-polyfill-js"></script>
-	<script type="text/javascript" id="contact-form-7-js-extra">
-		/* <![CDATA[ */
-		var wpcf7 = { "api": { "root": "https:\/\/jainheritageschool.com\/admissions-2026-27\/wp-json\/", "namespace": "contact-form-7\/v1" }, "cached": "1" };
-		/* ]]> */
-	</script>
-	<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript"
-		data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-content/cache/min/1/admissions-2026-27/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1765272384"
-		id="contact-form-7-js" data-rocket-defer defer></script>
-	<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+		<script type="text/javascript" id="wpcf7-redirect-script-js-extra">
+			/* <![CDATA[ */
+			var wpcf7_redirect_forms = { "1895": { "page_id": "593", "external_url": "", "use_external_url": "", "open_in_new_tab": "", "http_build_query": "", "http_build_query_selectively": "", "http_build_query_selectively_fields": "", "delay_redirect": "0", "after_sent_script": "", "thankyou_page_url": "https:\/\/jainheritageschool.com\/admissions-2026-27\/thank-you\/" }, "178": { "page_id": "593", "external_url": "", "use_external_url": "", "open_in_new_tab": "", "http_build_query": "", "http_build_query_selectively": "", "http_build_query_selectively_fields": "", "delay_redirect": "0", "after_sent_script": "", "thankyou_page_url": "https:\/\/jainheritageschool.com\/admissions-2026-27\/thank-you\/" }, "20": { "page_id": "593", "external_url": "", "use_external_url": "", "open_in_new_tab": "", "http_build_query": "", "http_build_query_selectively": "", "http_build_query_selectively_fields": "", "delay_redirect": "0", "after_sent_script": "", "thankyou_page_url": "https:\/\/jainheritageschool.com\/admissions-2026-27\/thank-you\/" } };
+			/* ]]> */
+		</script>
+		<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript"
+			data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-content/cache/min/1/admissions-2026-27/wp-content/plugins/cf7-redirection/js/wpcf7-redirect-script.js?ver=1765272384"
+			id="wpcf7-redirect-script-js" data-rocket-defer defer></script>
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript"
+			data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0"
+			id="wp-polyfill-js"></script>
+		<script type="text/javascript" id="contact-form-7-js-extra">
+			/* <![CDATA[ */
+			var wpcf7 = { "api": { "root": "https:\/\/jainheritageschool.com\/admissions-2026-27\/wp-json\/", "namespace": "contact-form-7\/v1" }, "cached": "1" };
+			/* ]]> */
+		</script>
+		<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript"
+			data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-content/cache/min/1/admissions-2026-27/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1765272384"
+			id="contact-form-7-js" data-rocket-defer defer></script>
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
 /* <![CDATA[ */
 "use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
 /* ]]> */
 </script>
-	<script type="text/javascript" id="rocket-preload-links-js-extra">
-		/* <![CDATA[ */
-		var RocketPreloadLinksConfig = { "excludeUris": "\/admissions-2026-27(\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$))|\/refer\/|\/go\/|\/recommend\/|\/recommends\/", "usesTrailingSlash": "1", "imageExt": "jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php", "fileExt": "jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm", "siteUrl": "https:\/\/jainheritageschool.com\/admissions-2026-27", "onHoverDelay": "100", "rateThrottle": "3" };
-		/* ]]> */
-	</script>
-	<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+		<script type="text/javascript" id="rocket-preload-links-js-extra">
+			/* <![CDATA[ */
+			var RocketPreloadLinksConfig = { "excludeUris": "\/admissions-2026-27(\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$))|\/refer\/|\/go\/|\/recommend\/|\/recommends\/", "usesTrailingSlash": "1", "imageExt": "jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php", "fileExt": "jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm", "siteUrl": "https:\/\/jainheritageschool.com\/admissions-2026-27", "onHoverDelay": "100", "rateThrottle": "3" };
+			/* ]]> */
+		</script>
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
 /* <![CDATA[ */
 (function() {
 "use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("https://jainheritageschool.com/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("https://jainheritageschool.com/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
 }());
 /* ]]> */
 </script>
-	<script type="rocketlazyloadscript" data-rocket-type="text/javascript"
-		data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3"
-		id="jquery-ui-core-js" data-rocket-defer defer></script>
-	<script type="rocketlazyloadscript" data-rocket-type="text/javascript"
-		data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-includes/js/jquery/ui/mouse.min.js?ver=1.13.3"
-		id="jquery-ui-mouse-js" data-rocket-defer defer></script>
-	<script type="rocketlazyloadscript" data-rocket-type="text/javascript"
-		data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-includes/js/jquery/ui/sortable.min.js?ver=1.13.3"
-		id="jquery-ui-sortable-js" data-rocket-defer defer></script>
-	<script type="rocketlazyloadscript" data-rocket-type="text/javascript"
-		data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-includes/js/jquery/ui/tabs.min.js?ver=1.13.3"
-		id="jquery-ui-tabs-js" data-rocket-defer defer></script>
-	<script type="rocketlazyloadscript" data-rocket-type="text/javascript"
-		data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-includes/js/jquery/ui/accordion.min.js?ver=1.13.3"
-		id="jquery-ui-accordion-js" data-rocket-defer defer></script>
-	<script type="text/javascript" id="mfn-plugins-js-extra">
-		/* <![CDATA[ */
-		var mfn = { "mobileInit": "1240", "parallax": "translate3d", "responsive": "1", "sidebarSticky": "", "lightbox": { "disable": false, "disableMobile": false, "title": false }, "slider": { "blog": 0, "clients": 0, "offer": 0, "portfolio": 0, "shop": 0, "slider": 5000, "testimonials": 0 }, "ajax": "https:\/\/jainheritageschool.com\/admissions-2026-27\/wp-admin\/admin-ajax.php" };
-		/* ]]> */
-	</script>
-	<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript"
-		data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-content/cache/min/1/admissions-2026-27/wp-content/themes/betheme/js/plugins.js?ver=1765272384"
-		id="mfn-plugins-js" data-rocket-defer defer></script>
-	<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript"
-		data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-content/cache/min/1/admissions-2026-27/wp-content/themes/betheme/js/menu.js?ver=1765272384"
-		id="mfn-menu-js" data-rocket-defer defer></script>
-	<script type="rocketlazyloadscript" data-rocket-type="text/javascript"
-		data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-content/themes/betheme/assets/animations/animations.min.js?ver=22.0.1"
-		id="mfn-animations-js" data-rocket-defer defer></script>
-	<script type="rocketlazyloadscript" data-rocket-type="text/javascript"
-		data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-content/themes/betheme/assets/jplayer/jplayer.min.js?ver=22.0.1"
-		id="mfn-jplayer-js" data-rocket-defer defer></script>
-	<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript"
-		data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-content/cache/min/1/admissions-2026-27/wp-content/themes/betheme/js/parallax/translate3d.js?ver=1765272384"
-		id="mfn-parallax-js" data-rocket-defer defer></script>
-	<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript"
-		data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-content/cache/min/1/admissions-2026-27/wp-content/themes/betheme/js/scripts.js?ver=1765272384"
-		id="mfn-scripts-js" data-rocket-defer defer></script>
-	<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="mfn-scripts-js-after">
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript"
+			data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3"
+			id="jquery-ui-core-js" data-rocket-defer defer></script>
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript"
+			data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-includes/js/jquery/ui/mouse.min.js?ver=1.13.3"
+			id="jquery-ui-mouse-js" data-rocket-defer defer></script>
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript"
+			data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-includes/js/jquery/ui/sortable.min.js?ver=1.13.3"
+			id="jquery-ui-sortable-js" data-rocket-defer defer></script>
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript"
+			data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-includes/js/jquery/ui/tabs.min.js?ver=1.13.3"
+			id="jquery-ui-tabs-js" data-rocket-defer defer></script>
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript"
+			data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-includes/js/jquery/ui/accordion.min.js?ver=1.13.3"
+			id="jquery-ui-accordion-js" data-rocket-defer defer></script>
+		<script type="text/javascript" id="mfn-plugins-js-extra">
+			/* <![CDATA[ */
+			var mfn = { "mobileInit": "1240", "parallax": "translate3d", "responsive": "1", "sidebarSticky": "", "lightbox": { "disable": false, "disableMobile": false, "title": false }, "slider": { "blog": 0, "clients": 0, "offer": 0, "portfolio": 0, "shop": 0, "slider": 5000, "testimonials": 0 }, "ajax": "https:\/\/jainheritageschool.com\/admissions-2026-27\/wp-admin\/admin-ajax.php" };
+			/* ]]> */
+		</script>
+		<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript"
+			data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-content/cache/min/1/admissions-2026-27/wp-content/themes/betheme/js/plugins.js?ver=1765272384"
+			id="mfn-plugins-js" data-rocket-defer defer></script>
+		<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript"
+			data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-content/cache/min/1/admissions-2026-27/wp-content/themes/betheme/js/menu.js?ver=1765272384"
+			id="mfn-menu-js" data-rocket-defer defer></script>
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript"
+			data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-content/themes/betheme/assets/animations/animations.min.js?ver=22.0.1"
+			id="mfn-animations-js" data-rocket-defer defer></script>
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript"
+			data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-content/themes/betheme/assets/jplayer/jplayer.min.js?ver=22.0.1"
+			id="mfn-jplayer-js" data-rocket-defer defer></script>
+		<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript"
+			data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-content/cache/min/1/admissions-2026-27/wp-content/themes/betheme/js/parallax/translate3d.js?ver=1765272384"
+			id="mfn-parallax-js" data-rocket-defer defer></script>
+		<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript"
+			data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-content/cache/min/1/admissions-2026-27/wp-content/themes/betheme/js/scripts.js?ver=1765272384"
+			id="mfn-scripts-js" data-rocket-defer defer></script>
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="mfn-scripts-js-after">
 /* <![CDATA[ */
 <!-- Date -->
 	var date = new Date();
@@ -6828,46 +6943,46 @@ var today = year + "-" + month + "-" + day;
 document.getElementById('theDate').value = today;
 /* ]]> */
 </script>
-	<script type="text/javascript" id="popup-maker-site-js-extra">
-		/* <![CDATA[ */
-		var pum_vars = { "version": "1.16.9", "pm_dir_url": "https:\/\/jainheritageschool.com\/admissions-2026-27\/wp-content\/plugins\/popup-maker\/", "ajaxurl": "https:\/\/jainheritageschool.com\/admissions-2026-27\/wp-admin\/admin-ajax.php", "restapi": "https:\/\/jainheritageschool.com\/admissions-2026-27\/wp-json\/pum\/v1", "rest_nonce": null, "default_theme": "165", "debug_mode": "", "disable_tracking": "", "home_url": "\/admissions-2026-27\/", "message_position": "top", "core_sub_forms_enabled": "1", "popups": [], "analytics_route": "analytics", "analytics_api": "https:\/\/jainheritageschool.com\/admissions-2026-27\/wp-json\/pum\/v1" };
-		var pum_sub_vars = { "ajaxurl": "https:\/\/jainheritageschool.com\/admissions-2026-27\/wp-admin\/admin-ajax.php", "message_position": "top" };
-		var pum_popups = { "pum-175": { "triggers": [{ "type": "click_open", "settings": { "cookie_name": "", "extra_selectors": "a[href$=\"download\"]" } }], "cookies": [], "disable_on_mobile": false, "disable_on_tablet": false, "atc_promotion": null, "explain": null, "type_section": null, "theme_id": "166", "size": "auto", "responsive_min_width": "0%", "responsive_max_width": "100%", "custom_width": "640px", "custom_height_auto": false, "custom_height": "380px", "scrollable_content": false, "animation_type": "fade", "animation_speed": "350", "animation_origin": "center top", "open_sound": "none", "custom_sound": "", "location": "center", "position_top": "100", "position_bottom": "0", "position_left": "0", "position_right": "0", "position_from_trigger": false, "position_fixed": false, "overlay_disabled": false, "stackable": false, "disable_reposition": false, "zindex": "1999999999", "close_button_delay": "0", "fi_promotion": null, "close_on_form_submission": false, "close_on_form_submission_delay": "0", "close_on_overlay_click": false, "close_on_esc_press": false, "close_on_f4_press": false, "disable_form_reopen": false, "disable_accessibility": false, "theme_slug": "lightbox", "id": 175, "slug": "download-brochure" } };
-		/* ]]> */
-	</script>
-	<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript"
-		data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-content/cache/min/1/admissions-2026-27/wp-content/uploads/pum/pum-site-scripts.js?ver=1765272384"
-		id="popup-maker-site-js" data-rocket-defer defer></script>
-	<script type="rocketlazyloadscript" data-rocket-type="text/javascript"
-		data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-content/plugins/prevent-landscape-rotation/public/assets/js/sweetalert.min.js?ver=6.8.6"
-		id="prevent-landscape-rotation-js" data-rocket-defer defer></script>
-	<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="prevent-landscape-rotation-js-after">
+		<script type="text/javascript" id="popup-maker-site-js-extra">
+			/* <![CDATA[ */
+			var pum_vars = { "version": "1.16.9", "pm_dir_url": "https:\/\/jainheritageschool.com\/admissions-2026-27\/wp-content\/plugins\/popup-maker\/", "ajaxurl": "https:\/\/jainheritageschool.com\/admissions-2026-27\/wp-admin\/admin-ajax.php", "restapi": "https:\/\/jainheritageschool.com\/admissions-2026-27\/wp-json\/pum\/v1", "rest_nonce": null, "default_theme": "165", "debug_mode": "", "disable_tracking": "", "home_url": "\/admissions-2026-27\/", "message_position": "top", "core_sub_forms_enabled": "1", "popups": [], "analytics_route": "analytics", "analytics_api": "https:\/\/jainheritageschool.com\/admissions-2026-27\/wp-json\/pum\/v1" };
+			var pum_sub_vars = { "ajaxurl": "https:\/\/jainheritageschool.com\/admissions-2026-27\/wp-admin\/admin-ajax.php", "message_position": "top" };
+			var pum_popups = { "pum-175": { "triggers": [{ "type": "click_open", "settings": { "cookie_name": "", "extra_selectors": "a[href$=\"download\"]" } }], "cookies": [], "disable_on_mobile": false, "disable_on_tablet": false, "atc_promotion": null, "explain": null, "type_section": null, "theme_id": "166", "size": "auto", "responsive_min_width": "0%", "responsive_max_width": "100%", "custom_width": "640px", "custom_height_auto": false, "custom_height": "380px", "scrollable_content": false, "animation_type": "fade", "animation_speed": "350", "animation_origin": "center top", "open_sound": "none", "custom_sound": "", "location": "center", "position_top": "100", "position_bottom": "0", "position_left": "0", "position_right": "0", "position_from_trigger": false, "position_fixed": false, "overlay_disabled": false, "stackable": false, "disable_reposition": false, "zindex": "1999999999", "close_button_delay": "0", "fi_promotion": null, "close_on_form_submission": false, "close_on_form_submission_delay": "0", "close_on_overlay_click": false, "close_on_esc_press": false, "close_on_f4_press": false, "disable_form_reopen": false, "disable_accessibility": false, "theme_slug": "lightbox", "id": 175, "slug": "download-brochure" } };
+			/* ]]> */
+		</script>
+		<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript"
+			data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-content/cache/min/1/admissions-2026-27/wp-content/uploads/pum/pum-site-scripts.js?ver=1765272384"
+			id="popup-maker-site-js" data-rocket-defer defer></script>
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript"
+			data-rocket-src="https://jainheritageschool.com/admissions-2026-27/wp-content/plugins/prevent-landscape-rotation/public/assets/js/sweetalert.min.js?ver=6.8.6"
+			id="prevent-landscape-rotation-js" data-rocket-defer defer></script>
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="prevent-landscape-rotation-js-after">
 /* <![CDATA[ */
 function isLandscape() {return (window.orientation === 90 || window.orientation === -90);}jQuery(document).ready(function() {APJorientationChangeFnc();});jQuery(window).on('orientationchange', function(event) {if (isLandscape()) {APJorientationChangeFnc();}else{swal.close();}});function APJorientationChangeFnc() {if (isLandscape()) {const wrapper = document.createElement('div'); wrapper.innerHTML = "<img class='swal2-image apjnolandscapeimage' src='https://jainheritageschool.com/admissions-2026-27/wp-content/plugins/prevent-landscape-rotation/public/assets/images/landscape-pic.png' style='width: 30%;margin-left: auto;margin-right: auto;height: 84px;margin-bottom: 8px;display: block;'><p style='color:#000000'><br>We don&#039;t support landscape mode yet. Please go back to portrait mode for the best experience.</p>";swal({content: wrapper,allowOutsideClick: false,closeOnClickOutside: false,closeOnEsc: false,});jQuery(".swal-button--confirm").css("display","none");jQuery('.swal-overlay').css('background-color', 'rgba(216, 216, 216, 0.94)');jQuery('.swal-modal').css('background-color', 'rgba(0, 174, 83, 0)');}else{swal({timer: 2,className: "apjtempswal",});swal.close();}}
 /* ]]> */
 </script>
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WR86B2K" height="0" width="0"
-			style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
-	<script>window.lazyLoadOptions = [{ elements_selector: "img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]", data_src: "lazy-src", data_srcset: "lazy-srcset", data_sizes: "lazy-sizes", class_loading: "lazyloading", class_loaded: "lazyloaded", threshold: 300, callback_loaded: function (element) { if (element.tagName === "IFRAME" && element.dataset.rocketLazyload == "fitvidscompatible") { if (element.classList.contains("lazyloaded")) { if (typeof window.jQuery != "undefined") { if (jQuery.fn.fitVids) { jQuery(element).parent().fitVids() } } } } } }, { elements_selector: ".rocket-lazyload", data_src: "lazy-src", data_srcset: "lazy-srcset", data_sizes: "lazy-sizes", class_loading: "lazyloading", class_loaded: "lazyloaded", threshold: 300, }]; window.addEventListener('LazyLoad::Initialized', function (e) {
-			var lazyLoadInstance = e.detail.instance; if (window.MutationObserver) {
-				var observer = new MutationObserver(function (mutations) {
-					var image_count = 0; var iframe_count = 0; var rocketlazy_count = 0; mutations.forEach(function (mutation) {
-						for (var i = 0; i < mutation.addedNodes.length; i++) {
-							if (typeof mutation.addedNodes[i].getElementsByTagName !== 'function') { continue }
-							if (typeof mutation.addedNodes[i].getElementsByClassName !== 'function') { continue }
-							images = mutation.addedNodes[i].getElementsByTagName('img'); is_image = mutation.addedNodes[i].tagName == "IMG"; iframes = mutation.addedNodes[i].getElementsByTagName('iframe'); is_iframe = mutation.addedNodes[i].tagName == "IFRAME"; rocket_lazy = mutation.addedNodes[i].getElementsByClassName('rocket-lazyload'); image_count += images.length; iframe_count += iframes.length; rocketlazy_count += rocket_lazy.length; if (is_image) { image_count += 1 }
-							if (is_iframe) { iframe_count += 1 }
-						}
-					}); if (image_count > 0 || iframe_count > 0 || rocketlazy_count > 0) { lazyLoadInstance.update() }
-				}); var b = document.getElementsByTagName("body")[0]; var config = { childList: !0, subtree: !0 }; observer.observe(b, config)
-			}
-		}, !1)</script>
-	<script data-no-minify="1" async
-		src="https://jainheritageschool.com/admissions-2026-27/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>
-	<script>function lazyLoadThumb(e, alt, l) { var t = '<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>', a = '<button class="play" aria-label="Play Youtube video"></button>'; if (l) { t = t.replace('data-lazy-', ''); t = t.replace('loading="lazy"', ''); t = t.replace(/<noscript>.*?<\/noscript>/g, ''); } t = t.replace('alt=""', 'alt="' + alt + '"'); return t.replace("ID", e) + a } function lazyLoadYoutubeIframe() { var e = document.createElement("iframe"), t = "ID?autoplay=1"; t += 0 === this.parentNode.dataset.query.length ? "" : "&" + this.parentNode.dataset.query; e.setAttribute("src", t.replace("ID", this.parentNode.dataset.src)), e.setAttribute("frameborder", "0"), e.setAttribute("allowfullscreen", "1"), e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"), this.parentNode.parentNode.replaceChild(e, this.parentNode) } document.addEventListener("DOMContentLoaded", function () { var exclusions = ["CH-Logo-V2.png"]; var e, t, p, u, l, a = document.getElementsByClassName("rll-youtube-player"); for (t = 0; t < a.length; t++)(e = document.createElement("div")), (u = 'https://i.ytimg.com/vi/ID/hqdefault.jpg'), (u = u.replace('ID', a[t].dataset.id)), (l = exclusions.some(exclusion => u.includes(exclusion))), e.setAttribute("data-id", a[t].dataset.id), e.setAttribute("data-query", a[t].dataset.query), e.setAttribute("data-src", a[t].dataset.src), (e.innerHTML = lazyLoadThumb(a[t].dataset.id, a[t].dataset.alt, l)), a[t].appendChild(e), (p = e.querySelector(".play")), (p.onclick = lazyLoadYoutubeIframe) });</script>
-	<script>(() => { class RocketElementorPreload { constructor() { this.deviceMode = document.createElement("span"), this.deviceMode.id = "elementor-device-mode-wpr", this.deviceMode.setAttribute("class", "elementor-screen-only"), document.body.appendChild(this.deviceMode) } t() { let t = getComputedStyle(this.deviceMode, ":after").content.replace(/"/g, ""); this.animationSettingKeys = this.i(t), document.querySelectorAll(".elementor-invisible[data-settings]").forEach((t => { const e = t.getBoundingClientRect(); if (e.bottom >= 0 && e.top <= window.innerHeight) try { this.o(t) } catch (t) { } })) } o(t) { const e = JSON.parse(t.dataset.settings), i = e.m || e.animation_delay || 0, n = e[this.animationSettingKeys.find((t => e[t]))]; if ("none" === n) return void t.classList.remove("elementor-invisible"); t.classList.remove(n), this.currentAnimation && t.classList.remove(this.currentAnimation), this.currentAnimation = n; let o = setTimeout((() => { t.classList.remove("elementor-invisible"), t.classList.add("animated", n), this.l(t, e) }), i); window.addEventListener("rocket-startLoading", (function () { clearTimeout(o) })) } i(t = "mobile") { const e = [""]; switch (t) { case "mobile": e.unshift("_mobile"); case "tablet": e.unshift("_tablet"); case "desktop": e.unshift("_desktop") }const i = []; return ["animation", "_animation"].forEach((t => { e.forEach((e => { i.push(t + e) })) })), i } l(t, e) { this.i().forEach((t => delete e[t])), t.dataset.settings = JSON.stringify(e) } static run() { const t = new RocketElementorPreload; requestAnimationFrame(t.t.bind(t)) } } document.addEventListener("DOMContentLoaded", RocketElementorPreload.run) })();</script>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WR86B2K" height="0" width="0"
+				style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+		<script>window.lazyLoadOptions = [{ elements_selector: "img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]", data_src: "lazy-src", data_srcset: "lazy-srcset", data_sizes: "lazy-sizes", class_loading: "lazyloading", class_loaded: "lazyloaded", threshold: 300, callback_loaded: function (element) { if (element.tagName === "IFRAME" && element.dataset.rocketLazyload == "fitvidscompatible") { if (element.classList.contains("lazyloaded")) { if (typeof window.jQuery != "undefined") { if (jQuery.fn.fitVids) { jQuery(element).parent().fitVids() } } } } } }, { elements_selector: ".rocket-lazyload", data_src: "lazy-src", data_srcset: "lazy-srcset", data_sizes: "lazy-sizes", class_loading: "lazyloading", class_loaded: "lazyloaded", threshold: 300, }]; window.addEventListener('LazyLoad::Initialized', function (e) {
+				var lazyLoadInstance = e.detail.instance; if (window.MutationObserver) {
+					var observer = new MutationObserver(function (mutations) {
+						var image_count = 0; var iframe_count = 0; var rocketlazy_count = 0; mutations.forEach(function (mutation) {
+							for (var i = 0; i < mutation.addedNodes.length; i++) {
+								if (typeof mutation.addedNodes[i].getElementsByTagName !== 'function') { continue }
+								if (typeof mutation.addedNodes[i].getElementsByClassName !== 'function') { continue }
+								images = mutation.addedNodes[i].getElementsByTagName('img'); is_image = mutation.addedNodes[i].tagName == "IMG"; iframes = mutation.addedNodes[i].getElementsByTagName('iframe'); is_iframe = mutation.addedNodes[i].tagName == "IFRAME"; rocket_lazy = mutation.addedNodes[i].getElementsByClassName('rocket-lazyload'); image_count += images.length; iframe_count += iframes.length; rocketlazy_count += rocket_lazy.length; if (is_image) { image_count += 1 }
+								if (is_iframe) { iframe_count += 1 }
+							}
+						}); if (image_count > 0 || iframe_count > 0 || rocketlazy_count > 0) { lazyLoadInstance.update() }
+					}); var b = document.getElementsByTagName("body")[0]; var config = { childList: !0, subtree: !0 }; observer.observe(b, config)
+				}
+			}, !1)</script>
+		<script data-no-minify="1" async
+			src="https://jainheritageschool.com/admissions-2026-27/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>
+		<script>function lazyLoadThumb(e, alt, l) { var t = '<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>', a = '<button class="play" aria-label="Play Youtube video"></button>'; if (l) { t = t.replace('data-lazy-', ''); t = t.replace('loading="lazy"', ''); t = t.replace(/<noscript>.*?<\/noscript>/g, ''); } t = t.replace('alt=""', 'alt="' + alt + '"'); return t.replace("ID", e) + a } function lazyLoadYoutubeIframe() { var e = document.createElement("iframe"), t = "ID?autoplay=1"; t += 0 === this.parentNode.dataset.query.length ? "" : "&" + this.parentNode.dataset.query; e.setAttribute("src", t.replace("ID", this.parentNode.dataset.src)), e.setAttribute("frameborder", "0"), e.setAttribute("allowfullscreen", "1"), e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"), this.parentNode.parentNode.replaceChild(e, this.parentNode) } document.addEventListener("DOMContentLoaded", function () { var exclusions = ["CH-Logo-V2.png"]; var e, t, p, u, l, a = document.getElementsByClassName("rll-youtube-player"); for (t = 0; t < a.length; t++)(e = document.createElement("div")), (u = 'https://i.ytimg.com/vi/ID/hqdefault.jpg'), (u = u.replace('ID', a[t].dataset.id)), (l = exclusions.some(exclusion => u.includes(exclusion))), e.setAttribute("data-id", a[t].dataset.id), e.setAttribute("data-query", a[t].dataset.query), e.setAttribute("data-src", a[t].dataset.src), (e.innerHTML = lazyLoadThumb(a[t].dataset.id, a[t].dataset.alt, l)), a[t].appendChild(e), (p = e.querySelector(".play")), (p.onclick = lazyLoadYoutubeIframe) });</script>
+		<script>(() => { class RocketElementorPreload { constructor() { this.deviceMode = document.createElement("span"), this.deviceMode.id = "elementor-device-mode-wpr", this.deviceMode.setAttribute("class", "elementor-screen-only"), document.body.appendChild(this.deviceMode) } t() { let t = getComputedStyle(this.deviceMode, ":after").content.replace(/"/g, ""); this.animationSettingKeys = this.i(t), document.querySelectorAll(".elementor-invisible[data-settings]").forEach((t => { const e = t.getBoundingClientRect(); if (e.bottom >= 0 && e.top <= window.innerHeight) try { this.o(t) } catch (t) { } })) } o(t) { const e = JSON.parse(t.dataset.settings), i = e.m || e.animation_delay || 0, n = e[this.animationSettingKeys.find((t => e[t]))]; if ("none" === n) return void t.classList.remove("elementor-invisible"); t.classList.remove(n), this.currentAnimation && t.classList.remove(this.currentAnimation), this.currentAnimation = n; let o = setTimeout((() => { t.classList.remove("elementor-invisible"), t.classList.add("animated", n), this.l(t, e) }), i); window.addEventListener("rocket-startLoading", (function () { clearTimeout(o) })) } i(t = "mobile") { const e = [""]; switch (t) { case "mobile": e.unshift("_mobile"); case "tablet": e.unshift("_tablet"); case "desktop": e.unshift("_desktop") }const i = []; return ["animation", "_animation"].forEach((t => { e.forEach((e => { i.push(t + e) })) })), i } l(t, e) { this.i().forEach((t => delete e[t])), t.dataset.settings = JSON.stringify(e) } static run() { const t = new RocketElementorPreload; requestAnimationFrame(t.t.bind(t)) } } document.addEventListener("DOMContentLoaded", RocketElementorPreload.run) })();</script>
 </body>
 
 <!-- Mirrored from jainheritageschool.com/admissions-2026-27/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 22 Jul 2026 11:50:49 GMT -->
