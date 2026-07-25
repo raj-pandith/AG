@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Doctor — Digital Healthcare Companion</title>
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+
+/* ===== SLIDES CONTAINER ===== */
+.slides-wrapper {
+  width: 100vw; height: 100vh; position: relative; overflow: hidden;
+}
+.slide {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 60px 80px;
+  opacity: 0; transform: translateX(60px);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+  pointer-events: none;
+  z-index: 0;
+}
+.slide.active { opacity: 1; transform: translateX(0); pointer-events: auto; z-index: 2; }
+.slide.exit-left { opacity: 0; transform: translateX(-60px); }
+
+/* ===== THEME COLORS ===== */
+.slide-hero { background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); color: #fff; }
+.slide-vision { background: linear-gradient(135deg, #0f0c29, #1a1a40, #0f2027); color: #fff; }
+.slide-problems { background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); color: #fff; }
+.slide-doctor { background: linear-gradient(135deg, #1b1b2f, #162447, #1f4068); color: #fff; }
+.slide-patient { background: linear-gradient(135deg, #0d0d1a, #1a1a3e, #1f3b4d); color: #fff; }
+.slide-solutions { background: linear-gradient(135deg, #1a1a2e, #1e3c72, #2a5298); color: #fff; }
+.slide-common { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); color: #fff; }
+.slide-gradient-1 { background: linear-gradient(135deg, #1e1b4b, #312e81, #4338ca); color: #fff; }
+.slide-gradient-2 { background: linear-gradient(135deg, #0f172a, #1e293b, #334155); color: #fff; }
+.slide-gradient-3 { background: linear-gradient(135deg, #18181b, #27272a, #3f3f46); color: #fff; }
+.slide-gradient-4 { background: linear-gradient(135deg, #111827, #1f2937, #374151); color: #fff; }
+.slide-gradient-5 { background: linear-gradient(135deg, #0c0a09, #1c1917, #292524); color: #fff; }
+.slide-gradient-6 { background: linear-gradient(135deg, #0a0a0a, #1a1a2e, #16213e); color: #fff; }
+
+/* ===== SLIDE CONTENT ===== */
+.slide-content { max-width: 1200px; width: 100%; text-align: center; }
+.slide-tag {
+  display: inline-block; padding: 6px 20px; border-radius: 50px;
+  background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
+  font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase;
+  margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.15);
+}
+.slide-icon { font-size: 4rem; margin-bottom: 20px; }
+.slide-title {
+  font-size: clamp(2rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.2;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #fff, #a5b4fc, #c7d2fe);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.slide-subtitle {
+  font-size: clamp(1rem, 2vw, 1.35rem); font-weight: 300;
+  opacity: 0.85; line-height: 1.7; max-width: 800px; margin: 0 auto;
+}
+.slide-accent { color: #818cf8; font-weight: 600; }
+
+/* ===== ANIMATED ELEMENTS ===== */
+.anim-fade { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+.anim-fade.in { opacity: 1; transform: translateY(0); }
+.anim-fade.d1 { transition-delay: 0.1s; }
+.anim-fade.d2 { transition-delay: 0.2s; }
+.anim-fade.d3 { transition-delay: 0.3s; }
+.anim-fade.d4 { transition-delay: 0.4s; }
+.anim-fade.d5 { transition-delay: 0.5s; }
+.anim-fade.d6 { transition-delay: 0.6s; }
+.anim-fade.d7 { transition-delay: 0.7s; }
+.anim-fade.d8 { transition-delay: 0.8s; }
+
+/* ===== CARDS GRID ===== */
+.card-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px; width: 100%; margin-top: 30px;
+}
+.card {
+  background: rgba(255,255,255,0.06); backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1); border-radius: 20px;
+  padding: 30px 24px; text-align: left; position: relative; overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+.card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #818cf8, #a78bfa, #c084fc);
+}
+.card-icon { font-size: 2.2rem; margin-bottom: 14px; }
+.card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: #e0e7ff; }
+.card-desc { font-size: 0.9rem; opacity: 0.8; line-height: 1.6; }
+
+/* ===== PROBLEM LIST ===== */
+.problem-list { display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 700px; margin: 30px auto; }
+.problem-item {
+  display: flex; align-items: center; gap: 16px;
+  background: rgba(255,80,80,0.08); border: 1px solid rgba(255,80,80,0.2);
+  border-radius: 14px; padding: 16px 22px; text-align: left;
+}
+.problem-num {
+  min-width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.9rem; color: #fff;
+}
+.problem-text { font-size: 0.95rem; opacity: 0.9; line-height: 1.5; }
+
+/* ===== SOLUTION LIST ===== */
+.solution-list { display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 700px; margin: 30px auto; }
+.solution-item {
+  display: flex; align-items: center; gap: 16px;
+  background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2);
+  border-radius: 14px; padding: 16px 22px; text-align: left;
+}
+.solution-num {
+  min-width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, #22c55e, #10b981);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.9rem; color: #fff;
+}
+.solution-text { font-size: 0.95rem; opacity: 0.9; line-height: 1.5; }
+
+/* ===== SPLIT LAYOUT ===== */
+.split-layout { display: flex; gap: 30px; width: 100%; max-width: 1000px; margin-top: 20px; align-items: stretch; }
+.split-col { flex: 1; display: flex; flex-direction: column; gap: 14px; }
+
+/* ===== HERO SPECIFIC ===== */
+.hero-logo { font-size: 6rem; margin-bottom: 10px; animation: pulse 2s ease infinite; }
+.hero-title {
+  font-size: clamp(3rem, 8vw, 6rem); font-weight: 900; letter-spacing: -2px;
+  background: linear-gradient(135deg, #fff 0%, #818cf8 50%, #c084fc 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-tagline {
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem); font-weight: 300;
+  opacity: 0.8; margin-top: 10px; letter-spacing: 1px;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(129,140,248,0.15); border: 1px solid rgba(129,140,248,0.3);
+  padding: 10px 24px; border-radius: 50px; margin-top: 24px;
+  font-size: 0.95rem;
+}
+.pulse-dot {
+  width: 8px; height: 8px; background: #818cf8; border-radius: 50%;
+  animation: pulse 1.5s ease infinite;
+}
+
+/* ===== VISION BIG TEXT ===== */
+.vision-text {
+  font-size: clamp(1.4rem, 3.5vw, 2.4rem); font-weight: 300;
+  line-height: 1.6; max-width: 900px; text-align: center;
+  font-style: italic; opacity: 0.9;
+}
+.vision-highlight {
+  background: linear-gradient(135deg, #818cf8, #c084fc);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; font-weight: 700; font-style: normal;
+}
+
+/* ===== STORY TABS ===== */
+.story-tabs { display: flex; gap: 0; margin-bottom: 30px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.15); }
+.story-tab {
+  padding: 14px 28px; cursor: pointer; font-size: 0.95rem; font-weight: 600;
+  background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.6);
+  border: none; transition: all 0.3s; letter-spacing: 0.5px;
+}
+.story-tab.active { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff; }
+.story-tab:hover:not(.active) { background: rgba(255,255,255,0.08); color: #fff; }
+.story-content { display: none; width: 100%; }
+.story-content.active { display: block; }
+
+/* ===== SIDE LABEL ===== */
+.side-label {
+  display: inline-block; padding: 6px 20px; border-radius: 50px;
+  font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;
+  font-weight: 700; margin-bottom: 16px;
+}
+.label-doctor { background: linear-gradient(135deg, rgba(99,102,241,0.3), rgba(139,92,246,0.3)); color: #c4b5fd; border: 1px solid rgba(139,92,246,0.3); }
+.label-patient { background: linear-gradient(135deg, rgba(239,68,68,0.2), rgba(249,115,22,0.2)); color: #fca5a5; border: 1px solid rgba(239,68,68,0.3); }
+.label-solution { background: linear-gradient(135deg, rgba(34,197,94,0.2), rgba(16,185,129,0.2)); color: #86efac; border: 1px solid rgba(34,197,94,0.3); }
+.label-common { background: linear-gradient(135deg, rgba(14,165,233,0.2), rgba(6,182,212,0.2)); color: #67e8f9; border: 1px solid rgba(14,165,233,0.3); }
+
+/* ===== FEATURE ROW ===== */
+.feature-row { display: flex; gap: 20px; width: 100%; flex-wrap: wrap; justify-content: center; margin-top: 20px; }
+.feature-box {
+  flex: 1; min-width: 200px; max-width: 280px;
+  background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.08); border-radius: 18px;
+  padding: 28px 22px; text-align: center;
+}
+.feature-emoji { font-size: 2.5rem; margin-bottom: 12px; }
+.feature-label { font-size: 1rem; font-weight: 600; color: #e0e7ff; margin-bottom: 6px; }
+.feature-desc { font-size: 0.85rem; opacity: 0.7; line-height: 1.5; }
+
+/* ===== ROADMAP ===== */
+.roadmap { display: flex; gap: 20px; width: 100%; margin-top: 20px; flex-wrap: wrap; justify-content: center; }
+.roadmap-step {
+  flex: 1; min-width: 180px; max-width: 240px; text-align: center;
+  position: relative;
+}
+.roadmap-circle {
+  width: 70px; height: 70px; border-radius: 50%; margin: 0 auto 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; font-weight: 800; color: #fff;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  box-shadow: 0 0 30px rgba(99,102,241,0.4);
+}
+.roadmap-label { font-size: 0.9rem; font-weight: 600; color: #e0e7ff; margin-bottom: 6px; }
+.roadmap-desc { font-size: 0.8rem; opacity: 0.65; }
+
+/* ===== CTA SLIDE ===== */
+.cta-title {
+  font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 16px;
+}
+.cta-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 40px; border-radius: 50px; border: none;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
+  color: #fff; font-size: 1.1rem; font-weight: 700;
+  cursor: pointer; margin-top: 24px; letter-spacing: 0.5px;
+  box-shadow: 0 8px 30px rgba(99,102,241,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.cta-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.5); }
+
+/* ===== PROGRESS BAR ===== */
+.progress-bar {
+  position: fixed; top: 0; left: 0; height: 3px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6, #c084fc);
+  z-index: 100; transition: width 0.5s ease; border-radius: 0 2px 2px 0;
+}
+.slide-counter {
+  position: fixed; bottom: 24px; right: 32px;
+  font-size: 0.85rem; color: rgba(255,255,255,0.5);
+  z-index: 100; font-weight: 500; letter-spacing: 1px;
+}
+
+/* ===== NAVIGATION ===== */
+.nav-hint {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 16px; z-index: 100;
+}
+.nav-arrow {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(255,255,255,0.08); backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #fff; font-size: 1.1rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s;
+}
+.nav-arrow:hover { background: rgba(255,255,255,0.15); transform: scale(1.08); }
+.nav-arrow:disabled { opacity: 0.25; cursor: not-allowed; }
+.nav-dots { display: flex; gap: 8px; align-items: center; }
+.nav-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,255,0.25); cursor: pointer;
+  transition: all 0.3s;
+}
+.nav-dot.active { background: #818cf8; width: 24px; border-radius: 4px; }
+
+/* ===== FLOATING SHAPES (decorative) ===== */
+.shape {
+  position: absolute; border-radius: 50%; opacity: 0.04;
+  pointer-events: none;
+}
+.shape-1 { width: 400px; height: 400px; background: #818cf8; top: -100px; right: -100px; }
+.shape-2 { width: 300px; height: 300px; background: #c084fc; bottom: -80px; left: -80px; }
+.shape-3 { width: 200px; height: 200px; background: #6366f1; top: 50%; left: 10%; }
+
+/* ===== ANIMATIONS ===== */
+@keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.05); opacity: 0.8; } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+@keyframes glow { 0%, 100% { box-shadow: 0 0 20px rgba(129,140,248,0.3); } 50% { box-shadow: 0 0 40px rgba(129,140,248,0.5); } }
+@keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
+.floating { animation: float 3s ease-in-out infinite; }
+.glow { animation: glow 2s ease-in-out infinite; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .slide { padding: 40px 24px; }
+  .card-grid { grid-template-columns: 1fr; }
+  .split-layout { flex-direction: column; }
+  .hero-logo { font-size: 4rem; }
+  .nav-hint { bottom: 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar" id="progressBar" style="width: 0%"></div>
+
+<!-- SLIDES WRAPPER -->
+<div class="slides-wrapper" id="slidesWrapper">
+
+  <!-- ==================== SLIDE 1: HERO ==================== -->
+  <div class="slide slide-hero active" data-index="0">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="slide-content">
+      <div class="hero-logo anim-fade" id="heroIcon">🩺</div>
+      <div class="hero-title anim-fade d1">My Doctor</div>
+      <div class="hero-tagline anim-fade d2">Your Digital Healthcare Companion</div>
+      <div class="hero-badge anim-fade d3">
+        <span class="pulse-dot"></span>
+        Connecting Patients &amp; Doctors Seamlessly
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 2: VISION ==================== -->
+  <div class="slide slide-vision" data-index="1">
+    <div class="shape shape-3"></div>
+    <div class="slide-content">
+      <div class="slide-tag anim-fade">Our Vision</div>
+      <div class="slide-icon anim-fade d1">🌟</div>
+      <div class="slide-title anim-fade d2">Our Vision</div>
+      <div class="vision-text anim-fade d3">
+        "To become the <span class="vision-highlight">digital healthcare companion</span> that keeps patients connected with their trusted doctors while creating a unified medical record that <span class="vision-highlight">improves healthcare for everyone</span>."
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 3: PROBLEMS OVERVIEW ==================== -->
+  <div class="slide slide-problems" data-index="2">
+    <div class="slide-content">
+      <div class="slide-tag anim-fade">The Challenge</div>
+      <div class="slide-title anim-fade d1">Healthcare Has Problems</div>
+      <div class="slide-subtitle anim-fade d2" style="margin-bottom:10px;">
+        While technology has advanced, the fundamental connection between patients and doctors is broken.
+      </div>
+      <div class="split-layout anim-fade d3">
+        <div style="text-align:center; flex:1;">
+          <div style="font-size:2.5rem; margin-bottom:8px;">👨‍⚕️</div>
+          <div style="font-weight:700; color:#a5b4fc;">Doctors</div>
+          <div style="font-size:0.85rem; opacity:0.6;">Lose patients, lack context when away</div>
+        </div>
+        <div style="font-size:2rem; display:flex;align-items:center; opacity:0.4;">→</div>
+        <div style="text-align:center; flex:1;">
+          <div style="font-size:2.5rem; margin-bottom:8px;">👤</div>
+          <div style="font-weight:700; color:#fca5a5;">Patients</div>
+          <div style="font-size:0.85rem; opacity:0.6;">Wait long, carry papers, no central records</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 4: DOCTOR'S PROBLEMS ==================== -->
+  <div class="slide slide-doctor" data-index="3">
+    <div class="slide-content">
+      <div class="side-label label-doctor anim-fade">👨‍⚕️ Doctor's Side Story</div>
+      <div class="slide-title anim-fade d1" style="font-size:clamp(1.8rem,4vw,2.8rem);">Problems Doctors Face Every Day</div>
+      <div class="problem-list">
+        <div class="problem-item anim-fade d2">
+          <div class="problem-num">1</div>
+          <div class="problem-text">Patient issues are closely related to doctors, but <strong>not all problems</strong> are communicated well.</div>
+        </div>
+        <div class="problem-item anim-fade d3">
+          <div class="problem-num">2</div>
+          <div class="problem-text"><strong>Doctors cannot lose patients</strong> even when they move out of town.</div>
+        </div>
+        <div class="problem-item anim-fade d4">
+          <div class="problem-num">3</div>
+          <div class="problem-text">In the doctor's absence, <strong>AI can check patient history</strong> and provide options — same medicine, referral, or availability info.</div>
+        </div>
+        <div class="problem-item anim-fade d5">
+          <div class="problem-num">4</div>
+          <div class="problem-text">During vacation, if a doctor gets free time, they can <strong>attend patients online</strong>.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 5: PATIENT'S PROBLEMS ==================== -->
+  <div class="slide slide-patient" data-index="4">
+    <div class="slide-content">
+      <div class="side-label label-patient anim-fade">👤 Patient's Side Story</div>
+      <div class="slide-title anim-fade d1" style="font-size:clamp(1.8rem,4vw,2.8rem);">Problems Patients Face Every Day</div>
+      <div class="problem-list">
+        <div class="problem-item anim-fade d2">
+          <div class="problem-num">1</div>
+          <div class="problem-text">Online consultations with <strong>unknown doctors</strong> fail to understand issues properly.</div>
+        </div>
+        <div class="problem-item anim-fade d3">
+          <div class="problem-num">2</div>
+          <div class="problem-text">Patients have to <strong>wait in hospitals</strong> for long hours to get treated.</div>
+        </div>
+        <div class="problem-item anim-fade d4">
+          <div class="problem-num">3</div>
+          <div class="problem-text">Token systems exist but <strong>lack live updates</strong> on status.</div>
+        </div>
+        <div class="problem-item anim-fade d5">
+          <div class="problem-num">4</div>
+          <div class="problem-text">Sometimes patients <strong>can't go to the hospital</strong> and no family member is available to help.</div>
+        </div>
+        <div class="problem-item anim-fade d6">
+          <div class="problem-num">5</div>
+          <div class="problem-text">Patients must <strong>carry hard copies</strong> of medical reports and X-rays everywhere.</div>
+        </div>
+        <div class="problem-item anim-fade d7">
+          <div class="problem-num">6</div>
+          <div class="problem-text">There is <strong>no centralized patient medical history</strong> system.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 6: PATIENT SOLUTIONS (1-4) ==================== -->
+  <div class="slide slide-solutions" data-index="5">
+    <div class="slide-content">
+      <div class="side-label label-solution anim-fade">✅ Patient Solutions</div>
+      <div class="slide-title anim-fade d1" style="font-size:clamp(1.8rem,4vw,2.8rem);">Our Smart Solutions</div>
+      <div class="solution-list">
+        <div class="solution-item anim-fade d2">
+          <div class="solution-num">✓</div>
+          <div class="solution-text"><strong>Connect with a known doctor</strong> — they understand you better. A secure platform replaces sharing personal numbers.</div>
+        </div>
+        <div class="solution-item anim-fade d3">
+          <div class="solution-num">✓</div>
+          <div class="solution-text"><strong>Live hospital updates</strong> — see real-time doctor availability, get smart alerts to reach the hospital just in time.</div>
+        </div>
+        <div class="solution-item anim-fade d4">
+          <div class="solution-num">✓</div>
+          <div class="solution-text"><strong>Family member support</strong> — add family members who can set up calls and explain the situation on your behalf.</div>
+        </div>
+        <div class="solution-item anim-fade d5">
+          <div class="solution-num">✓</div>
+          <div class="solution-text"><strong>Centralized cloud records</strong> — all medical history in the cloud. Get a full summary sent to the doctor on appointment. No more carrying files!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 7: DOCTOR SOLUTIONS (Feature Cards) ==================== -->
+  <div class="slide slide-gradient-1" data-index="6">
+    <div class="slide-content">
+      <div class="side-label label-doctor anim-fade">🤖 AI-Powered Doctor Support</div>
+      <div class="slide-title anim-fade d1" style="font-size:clamp(1.8rem,4vw,2.8rem);">How We Help Doctors</div>
+      <div class="card-grid">
+        <div class="card anim-fade d2">
+          <div class="card-icon">🧠</div>
+          <div class="card-title">AI Patient Assistant</div>
+          <div class="card-desc">When a doctor is unavailable, AI reviews the patient's history and suggests the best next step — same medicine, referral, or appointment rescheduling.</div>
+        </div>
+        <div class="card anim-fade d3">
+          <div class="card-icon">🏖️</div>
+          <div class="card-title">Vacation Mode</div>
+          <div class="card-desc">Doctors on vacation can still handle urgent online consultations in their free time — no patient is left unattended.</div>
+        </div>
+        <div class="card anim-fade d4">
+          <div class="card-icon">📋</div>
+          <div class="card-title">Smart Patient Handover</div>
+          <div class="card-desc">Before any consultation, the system auto-sends a summarized patient history to the doctor — complete context in seconds.</div>
+        </div>
+        <div class="card anim-fade d5">
+          <div class="card-icon">🔒</div>
+          <div class="card-title">Secure Connection</div>
+          <div class="card-desc">Doctors connect with patients through a secure platform — no need to share personal phone numbers with everyone.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 8: PATIENT SOLUTIONS DETAILED (Cards) ==================== -->
+  <div class="slide slide-gradient-2" data-index="7">
+    <div class="slide-content">
+      <div class="side-label label-patient anim-fade">📱 Patient Experience Redefined</div>
+      <div class="slide-title anim-fade d1" style="font-size:clamp(1.8rem,4vw,2.8rem);">A Better Way to Healthcare</div>
+      <div class="card-grid">
+        <div class="card anim-fade d2">
+          <div class="card-icon">👨‍⚕️</div>
+          <div class="card-title">Trusted Doctors</div>
+          <div class="card-desc">Connect with doctors who already know your history. Better conversations, better care.</div>
+        </div>
+        <div class="card anim-fade d3">
+          <div class="card-icon">⏱️</div>
+          <div class="card-title">No More Waiting</div>
+          <div class="card-desc">GPS-based smart alerts tell you exactly when to reach the hospital. Zero waiting time.</div>
+        </div>
+        <div class="card anim-fade d4">
+          <div class="card-icon">👨‍👩‍👧</div>
+          <div class="card-title">Family Support</div>
+          <div class="card-desc">Add family members who can represent you during consultations — great for elders and children.</div>
+        </div>
+        <div class="card anim-fade d5">
+          <div class="card-icon">☁️</div>
+          <div class="card-title">Cloud Records</div>
+          <div class="card-desc">All reports, X-rays & history stored securely in the cloud. Access from anywhere, anytime.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 9: HOW IT WORKS ==================== -->
+  <div class="slide slide-gradient-3" data-index="8">
+    <div class="slide-content">
+      <div class="slide-tag anim-fade">How It Works</div>
+      <div class="slide-title anim-fade d1">Seamless Experience, Every Step</div>
+      <div class="roadmap">
+        <div class="roadmap-step anim-fade d2">
+          <div class="roadmap-circle">1</div>
+          <div class="roadmap-label">Book</div>
+          <div class="roadmap-desc">Book appointment with your trusted doctor</div>
+        </div>
+        <div class="roadmap-step anim-fade d3" style="display:flex;align-items:center;font-size:1.5rem;opacity:0.4;">→</div>
+        <div class="roadmap-step anim-fade d3">
+          <div class="roadmap-circle">2</div>
+          <div class="roadmap-label">Get Summary</div>
+          <div class="roadmap-desc">Full medical history sent to doctor automatically</div>
+        </div>
+        <div class="roadmap-step anim-fade d4" style="display:flex;align-items:center;font-size:1.5rem;opacity:0.4;">→</div>
+        <div class="roadmap-step anim-fade d4">
+          <div class="roadmap-circle">3</div>
+          <div class="roadmap-label">Consult</div>
+          <div class="roadmap-desc">Visit or consult online with full context</div>
+        </div>
+        <div class="roadmap-step anim-fade d5" style="display:flex;align-items:center;font-size:1.5rem;opacity:0.4;">→</div>
+        <div class="roadmap-step anim-fade d5">
+          <div class="roadmap-circle">4</div>
+          <div class="roadmap-label">Track</div>
+          <div class="roadmap-desc">Records updated & available anywhere</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 10: COMMON / ECOSYSTEM ==================== -->
+  <div class="slide slide-common" data-index="9">
+    <div class="slide-content">
+      <div class="side-label label-common anim-fade">🌐 Beyond Healthcare</div>
+      <div class="slide-title anim-fade d1">Building a Complete Health Ecosystem</div>
+      <div class="slide-subtitle anim-fade d2" style="margin-bottom:20px;">
+        With centralized medical history, we unlock powerful features that benefit everyone.
+      </div>
+      <div class="feature-row">
+        <div class="feature-box anim-fade d3">
+          <div class="feature-emoji">🛡️</div>
+          <div class="feature-label">Better Insurance</div>
+          <div class="feature-desc">Accurate history = better insurance plans & faster claims.</div>
+        </div>
+        <div class="feature-box anim-fade d4">
+          <div class="feature-emoji">⚡</div>
+          <div class="feature-label">Fast Insurance Processing</div>
+          <div class="feature-desc">Digital records speed up approvals & reimbursements.</div>
+        </div>
+        <div class="feature-box anim-fade d5">
+          <div class="feature-emoji">💊</div>
+          <div class="feature-label">Generic Medicine</div>
+          <div class="feature-desc">Smart suggestions for affordable generic alternatives.</div>
+        </div>
+      </div>
+      <div class="feature-row" style="margin-top:14px;">
+        <div class="feature-box anim-fade d6">
+          <div class="feature-emoji">⌚</div>
+          <div class="feature-label">Wearables Integration</div>
+          <div class="feature-desc">Sync with smart watches for real-time health monitoring.</div>
+        </div>
+        <div class="feature-box anim-fade d7">
+          <div class="feature-emoji">👥</div>
+          <div class="feature-label">Health Community</div>
+          <div class="feature-desc">Engage with a community for tips, support & motivation.</div>
+        </div>
+        <div class="feature-box anim-fade d8">
+          <div class="feature-emoji">🚀</div>
+          <div class="feature-label">And So Much More...</div>
+          <div class="feature-desc">The possibilities are endless with a unified health platform.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 11: IMPACT SUMMARY ==================== -->
+  <div class="slide slide-gradient-4" data-index="10">
+    <div class="slide-content">
+      <div class="slide-tag anim-fade">Impact</div>
+      <div class="slide-title anim-fade d1">A Win-Win for Everyone</div>
+      <div class="card-grid">
+        <div class="card anim-fade d2" style="text-align:center;">
+          <div style="font-size:3rem; margin-bottom:10px;">👨‍⚕️</div>
+          <div class="card-title" style="color:#c4b5fd;">For Doctors</div>
+          <div class="card-desc" style="text-align:center;">Never lose a patient. Work smarter with AI assistance. Stay connected even on vacation.</div>
+        </div>
+        <div class="card anim-fade d3" style="text-align:center;">
+          <div style="font-size:3rem; margin-bottom:10px;">👤</div>
+          <div class="card-title" style="color:#fca5a5;">For Patients</div>
+          <div class="card-desc" style="text-align:center;">No waiting. No paper files. Trusted doctors who know you. Complete care at your fingertips.</div>
+        </div>
+        <div class="card anim-fade d4" style="text-align:center;">
+          <div style="font-size:3rem; margin-bottom:10px;">🏥</div>
+          <div class="card-title" style="color:#86efac;">For Healthcare</div>
+          <div class="card-desc" style="text-align:center;">Better insurance. Faster processing. Healthier communities. A stronger ecosystem for all.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 12: FUTURE ROADMAP ==================== -->
+  <div class="slide slide-gradient-5" data-index="11">
+    <div class="slide-content">
+      <div class="slide-tag anim-fade">Roadmap</div>
+      <div class="slide-title anim-fade d1">What's Next for My Doctor</div>
+      <div class="roadmap" style="margin-top:10px;">
+        <div class="roadmap-step anim-fade d2">
+          <div class="roadmap-circle" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);">📱</div>
+          <div class="roadmap-label">MVP Launch</div>
+          <div class="roadmap-desc">Core platform with appointment booking & records</div>
+        </div>
+        <div class="roadmap-step anim-fade d3">
+          <div class="roadmap-circle" style="background:linear-gradient(135deg,#8b5cf6,#a855f7);">🧠</div>
+          <div class="roadmap-label">AI Integration</div>
+          <div class="roadmap-desc">Smart assistant for doctors & patients</div>
+        </div>
+        <div class="roadmap-step anim-fade d4">
+          <div class="roadmap-circle" style="background:linear-gradient(135deg,#a855f7,#d946ef);">⌚</div>
+          <div class="roadmap-label">Wearables</div>
+          <div class="roadmap-desc">Real-time health monitoring & alerts</div>
+        </div>
+        <div class="roadmap-step anim-fade d5">
+          <div class="roadmap-circle" style="background:linear-gradient(135deg,#d946ef,#ec4899);">🌐</div>
+          <div class="roadmap-label">Full Ecosystem</div>
+          <div class="roadmap-desc">Insurance, pharmacy & community integration</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 13: CLOSING ==================== -->
+  <div class="slide slide-gradient-6" data-index="12">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="slide-content">
+      <div class="hero-logo anim-fade" style="font-size:5rem;">🩺</div>
+      <div class="hero-title anim-fade d1" style="font-size:clamp(2.5rem,6vw,4.5rem);">My Doctor</div>
+      <div class="vision-text anim-fade d2" style="font-size:clamp(1rem,2vw,1.3rem); font-style:normal;">
+        Healthcare, reimagined — <span style="color:#818cf8;font-weight:600;">connected, intelligent, and personal.</span>
+      </div>
+      <div class="cta-btn anim-fade d3" onclick="location.reload()">
+        <span>🔄</span> Restart Presentation
+      </div>
+      <div class="anim-fade d4" style="margin-top:40px; opacity:0.5; font-size:0.85rem;">
+        Press <kbd style="padding:3px 10px;background:rgba(255,255,255,0.1);border-radius:4px;border:1px solid rgba(255,255,255,0.2);">←</kbd>
+        <kbd style="padding:3px 10px;background:rgba(255,255,255,0.1);border-radius:4px;border:1px solid rgba(255,255,255,0.2);">→</kbd>
+        or <kbd style="padding:3px 10px;background:rgba(255,255,255,0.1);border-radius:4px;border:1px solid rgba(255,255,255,0.2);">Space</kbd> to navigate
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- SLIDE COUNTER -->
+<div class="slide-counter" id="slideCounter">01 / 13</div>
+
+<!-- NAVIGATION -->
+<div class="nav-hint" id="navHint">
+  <button class="nav-arrow" id="prevBtn" onclick="goSlide(currentSlide - 1)">‹</button>
+  <div class="nav-dots" id="navDots"></div>
+  <button class="nav-arrow" id="nextBtn" onclick="goSlide(currentSlide + 1)">›</button>
+</div>
+
+<script>
+// ===== STATE =====
+const totalSlides = document.querySelectorAll('.slide').length;
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+// ===== BUILD DOTS =====
+const dotsContainer = document.getElementById('navDots');
+for (let i = 0; i < totalSlides; i++) {
+  const dot = document.createElement('div');
+  dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
+  dot.onclick = () => goSlide(i);
+  dotsContainer.appendChild(dot);
+}
+
+// ===== NAVIGATION =====
+function goSlide(index) {
+  if (index < 0 || index >= totalSlides || index === currentSlide) return;
+
+  const prev = currentSlide;
+  currentSlide = index;
+
+  // Transition out
+  slides[prev].classList.remove('active');
+  slides[prev].classList.add('exit-left');
+
+  // Transition in
+  slides[currentSlide].classList.add('active');
+  slides[currentSlide].classList.remove('exit-left');
+
+  // Reset animations on new slide
+  setTimeout(() => {
+    const anims = slides[currentSlide].querySelectorAll('.anim-fade');
+    anims.forEach(el => el.classList.remove('in'));
+    requestAnimationFrame(() => {
+      anims.forEach(el => el.classList.add('in'));
+    });
+  }, 100);
+
+  // Update UI
+  updateUI();
+}
+
+function updateUI() {
+  // Progress bar
+  const progress = ((currentSlide + 1) / totalSlides) * 100;
+  document.getElementById('progressBar').style.width = progress + '%';
+
+  // Counter
+  const counter = document.getElementById('slideCounter');
+  counter.textContent = String(currentSlide + 1).padStart(2, '0') + ' / ' + String(totalSlides).padStart(2, '0');
+
+  // Dots
+  document.querySelectorAll('.nav-dot').forEach((dot, i) => {
+    dot.classList.toggle('active', i === currentSlide);
+  });
+
+  // Arrows
+  document.getElementById('prevBtn').disabled = currentSlide === 0;
+  document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+}
+
+// ===== INIT =====
+function init() {
+  // Mark first slide elements as visible
+  slides[0].querySelectorAll('.anim-fade').forEach(el => el.classList.add('in'));
+  updateUI();
+}
+
+// ===== KEYBOARD =====
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+    e.preventDefault();
+    goSlide(currentSlide + 1);
+  } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+    e.preventDefault();
+    goSlide(currentSlide - 1);
+  } else if (e.key === 'Home') {
+    e.preventDefault();
+    goSlide(0);
+  } else if (e.key === 'End') {
+    e.preventDefault();
+    goSlide(totalSlides - 1);
+  } else if (e.key === 'f' || e.key === 'F') {
+    toggleFullscreen();
+  }
+});
+
+// ===== TOUCH / SWIPE =====
+let touchStartX = 0;
+document.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+document.addEventListener('touchend', (e) => {
+  const diff = touchStartX - e.changedTouches[0].screenX;
+  if (Math.abs(diff) > 50) {
+    goSlide(diff > 0 ? currentSlide + 1 : currentSlide - 1);
+  }
+}, { passive: true });
+
+// ===== FULLSCREEN =====
+function toggleFullscreen() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().catch(() => {});
+  } else {
+    document.exitFullscreen();
+  }
+}
+
+// ===== START =====
+init();
+</script>
+</body>
+</html>

@@ -25,7 +25,7 @@ REPLACEMENTS = [
     ('JainHeritageSchool', 'LoremIpsumSchool', True),
 
     # JHS abbreviation
-    ('JHS', 'DHS', True),
+    ('JHS', '', True),
 
     # Domain in URLs - replace with example.com
     ('jainheritageschool.com', 'example.com', True),
