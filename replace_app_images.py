@@ -4,7 +4,7 @@
 import re
 from pathlib import Path
 
-FILE = Path(r"c:\My Web Sites\Jain2\jainheritageschool.com\admissions-2026-27\application\index.html")
+FILE = Path(r"c:\My Web Sites\Jain2\mainfolder.com\admissions-2026-27\application\index.html")
 
 with open(FILE, encoding='utf-8') as f:
     content = f.read()

@@ -5,7 +5,7 @@ import os
 import re
 from pathlib import Path
 
-BASE = Path(r"c:\My Web Sites\Jain2\jainheritageschool.com")
+BASE = Path(r"c:\My Web Sites\Jain2\mainfolder.com")
 
 # Find all HTML files
 html_files = []
@@ -28,8 +28,8 @@ REPLACEMENTS = [
     ('JHS', '', True),
 
     # Domain in URLs - replace with example.com
-    ('jainheritageschool.com', 'example.com', True),
-    ('JainHeritageSchool.com', 'Example.com', True),
+    ('mainfolder.com', 'example.com', True),
+    ('mainfolder.com', 'Example.com', True),
 
     # Phone numbers - replace with dummy number
     ('+918951361981', '+919876543210', True),
@@ -40,8 +40,8 @@ REPLACEMENTS = [
     ('8951361982', '9876543211', True),
 
     # Email addresses with school name
-    ('info@jainheritageschool.com', 'info@example.com', True),
-    ('admissions@jainheritageschool.com', 'admissions@example.com', True),
+    ('info@mainfolder.com', 'info@example.com', True),
+    ('admissions@mainfolder.com', 'admissions@example.com', True),
 ]
 
 total_files = 0

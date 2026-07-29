@@ -3,7 +3,7 @@
 
 from pathlib import Path
 
-STYLE_CSS = Path(r"c:\My Web Sites\Jain2\jainheritageschool.com\assets\css\style.css")
+STYLE_CSS = Path(r"c:\My Web Sites\Jain2\mainfolder.com\assets\css\style.css")
 
 with open(STYLE_CSS, encoding='utf-8') as f:
     content = f.read()

@@ -6,7 +6,7 @@ Replace real image srcs with placehold.co placeholders, preserving original src 
 import re
 from pathlib import Path
 
-BASE = Path(r"c:\My Web Sites\Jain2\jainheritageschool.com\admissions-2026-27")
+BASE = Path(r"c:\My Web Sites\Jain2\mainfolder.com\admissions-2026-27")
 FILE = BASE / "index.html"
 
 # Exclude these from replacement
