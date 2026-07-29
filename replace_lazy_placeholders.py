@@ -7,7 +7,7 @@ For lazy-loaded images that have data-lazy-src, use that as the original URL.
 import re
 from pathlib import Path
 
-BASE = Path(r"c:\My Web Sites\Jain2\jainheritageschool.com\admissions-2026-27")
+BASE = Path(r"c:\My Web Sites\Jain2\mainfolder.com\admissions-2026-27")
 FILE = BASE / "index.html"
 
 with open(FILE, encoding='utf-8') as f:

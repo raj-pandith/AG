@@ -5,7 +5,7 @@ import os
 import re
 from pathlib import Path
 
-BASE = Path(r"c:\My Web Sites\Jain2\jainheritageschool.com")
+BASE = Path(r"c:\My Web Sites\Jain2\mainfolder.com")
 
 # Patterns to identify contact/social links to remove
 LINK_PATTERNS = [

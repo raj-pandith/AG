@@ -5,7 +5,7 @@ import os
 import re
 from pathlib import Path
 
-BASE = Path(r"c:\My Web Sites\Jain2\jainheritageschool.com\admissions-2026-27")
+BASE = Path(r"c:\My Web Sites\Jain2\mainfolder.com\admissions-2026-27")
 
 # Find all HTML files
 html_files = []

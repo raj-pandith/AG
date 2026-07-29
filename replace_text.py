@@ -18,7 +18,7 @@ import re
 import random
 from pathlib import Path
 
-BASE = Path(r"c:\My Web Sites\Jain2\jainheritageschool.com")
+BASE = Path(r"c:\My Web Sites\Jain2\mainfolder.com")
 EXCLUDE_DIRS = {"admissions-2026-27"}
 
 _rng = random.Random(42)

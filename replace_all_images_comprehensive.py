@@ -7,7 +7,7 @@ Replaces EVERY image reference with placeholder, preserves original in data-orig
 import re
 from pathlib import Path
 
-BASE = Path(r"c:\My Web Sites\Jain2\jainheritageschool.com\admissions-2026-27")
+BASE = Path(r"c:\My Web Sites\Jain2\mainfolder.com\admissions-2026-27")
 FILE = BASE / "index.html"
 
 with open(FILE, encoding='utf-8') as f:
