@@ -75,7 +75,7 @@ def fix_navbar(content):
         r'<img[^>]*>\s*'
         r'</button> -->\s*'
         r'<a href="admissions-2026-27[^"]*" target="_blank" class="th-btn blue-btn th-icon">[^<]+</a>)\s*'
-        r'(<button type="button" class="th-menu-toggle d-block d-xl-none">[^<]*</button>)\s*'
+        r'(<button type="button" class="th-menu-toggle d-block d-xl-none"><i class="far fa-bars"></i>[^<]*</button>)\s*'
         r'(</div>)',
         re.DOTALL
     )
@@ -114,7 +114,7 @@ def fix_navbar(content):
 
             changed = True
             return (btn_content + '\n                            </div>\n'
-                    '                            <button type="button" class="th-menu-toggle d-block d-xl-none"><i class="far fa-bars"></i></button>\n'
+                    '                            <button type="button" class="th-menu-toggle d-block d-xl-none"><i class="far fa-bars"></i><i class="far fa-bars"></i></button>\n'
                     '                        </div>\n                    </div>\n                </div>\n                <div class="logo-bg')
 
         content = header_btn_pattern.sub(add_toggle, content)
