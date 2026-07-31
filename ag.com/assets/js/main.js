@@ -140,7 +140,7 @@
     // Add a dedicated mobile Careers button below Contact Us in the off-canvas menu.
     $(".th-mobile-menu > ul").each(function () {
         if (!$(this).find(".mobile-careers-cta").length) {
-            $(this).append('<li class="mobile-careers-cta"><a href="careers.html">Careers <i class="fa-light fa-arrow-up-right"></i></a></li>');
+            $(this).append('<li class="mobile-careers-cta"><a href="careers.html" style="background-color:#7c381a">Careers <i class="fa-light fa-arrow-up-right"></i></a></li>');
         }
     });
 
