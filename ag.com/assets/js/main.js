@@ -74,6 +74,13 @@
             function menuToggle() {
                 menu.toggleClass(opt.bodyToggleClass);
 
+                // Add/remove body scroll lock
+                if (menu.hasClass(opt.bodyToggleClass)) {
+                    $('body').addClass('th-menu-open');
+                } else {
+                    $('body').removeClass('th-menu-open');
+                }
+
                 // collapse submenu on menu hide or show
                 var subMenu = "." + opt.subMenuClass;
                 $(subMenu).each(function () {

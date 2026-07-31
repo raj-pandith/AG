@@ -2667,6 +2667,14 @@ input[type=time]::-webkit-calendar-picker-indicator {
   visibility: hidden;
 }
 
+/* Body scroll lock when mobile menu is open */
+body.th-menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  max-height: 100vh;
+}
+
 .th-menu-wrapper .mobile-logo {
   padding-bottom: 30px;
   padding-top: 40px;
@@ -2683,18 +2691,19 @@ input[type=time]::-webkit-calendar-picker-indicator {
   border: none;
   font-size: 22px;
   position: absolute;
-  right: -16.5px;
-  top: 25px;
+  right: 10px;
+  top: 10px;
   padding: 0;
   line-height: 1;
-  width: 33px;
-  height: 33px;
-  line-height: 35px;
+  width: 36px;
+  height: 36px;
+  line-height: 38px;
   font-size: 18px;
-  z-index: 1;
+  z-index: 10;
   color: var(--white-color);
   background-color: var(--title-color);
   border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 .th-menu-wrapper .th-menu-toggle:hover {
@@ -2704,7 +2713,7 @@ input[type=time]::-webkit-calendar-picker-indicator {
 
 .th-menu-wrapper .th-menu-area {
   width: 100%;
-  max-width: 310px;
+  max-width: 85vw;
   background-color: #fff;
   border-right: 3px solid var(--title-color);
   height: 100%;
@@ -41908,13 +41917,315 @@ span.select2-selection.select2-selection--single:focus {
   }
 }
 
+/*==================================================
+   MOBILE-FRIENDLY RESPONSIVE IMPROVEMENTS
+   Added for better mobile/tablet experience
+==================================================*/
 
+/* 320px - Smallest phones (iPhone SE) */
+@media (max-width: 320px) {
+  .th-container {
+    max-width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 
+  h1 { font-size: 28px !important; line-height: 1.2; }
+  h2 { font-size: 24px !important; line-height: 1.25; }
+  h3 { font-size: 20px !important; line-height: 1.3; }
 
+  .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    min-height: 44px;
+  }
 
+  .form-control, .form-select {
+    height: 48px;
+    font-size: 14px;
+  }
 
+  .card { margin-bottom: 20px; }
+}
 
+/* 480px - Large phones */
+@media (min-width: 321px) and (max-width: 480px) {
+  .th-container {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 
+  .form-control, .form-select {
+    height: 50px;
+    font-size: 15px;
+  }
+
+  .btn {
+    min-height: 44px;
+    padding: 10px 20px;
+  }
+}
+
+/* 768px - Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  .th-container {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .col-lg-4, .col-lg-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .form-control, .form-select {
+    height: 50px;
+  }
+
+  .btn {
+    min-height: 44px;
+  }
+}
+
+/* 900px - Tablet portrait (NEW - previously no coverage) */
+@media (min-width: 769px) and (max-width: 900px) {
+  .th-container {
+    max-width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .col-lg-4, .col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .form-control, .form-select {
+    height: 52px;
+  }
+}
+
+/* 1024px - Tablet landscape (NEW - previously no coverage) */
+@media (min-width: 901px) and (max-width: 1024px) {
+  .th-container {
+    max-width: 95%;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .col-lg-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .form-control, .form-select {
+    height: 52px;
+  }
+}
+
+/* GLOBAL MOBILE IMPROVEMENTS - Apply at all small viewports */
+@media (max-width: 1024px) {
+  /* Prevent horizontal overflow */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Ensure touch targets are at least 44x44px */
+  a, button, .btn, input[type="submit"], input[type="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Improve form inputs for mobile */
+  .form-control, .form-select, input[type="text"], input[type="email"], input[type="tel"], textarea {
+    height: 48px !important;
+    font-size: 16px !important; /* Prevents iOS zoom on focus */
+    padding: 10px 15px;
+  }
+
+  textarea {
+    min-height: 120px;
+  }
+
+  /* Stack cards and grids on mobile */
+  .row {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  .row > [class*="col-"] {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+  }
+
+  /* Ensure buttons are tappable */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn:hover, .btn:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  /* Footer stacking */
+  footer .row > [class*="col-"] {
+    margin-bottom: 30px;
+  }
+
+  footer .widget {
+    margin-bottom: 25px;
+  }
+
+  /* Improve spacing on mobile */
+  section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  .container, .th-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* Images should not overflow */
+  img, .img-fluid {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Tables should scroll horizontally if needed */
+  .table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Navbar improvements */
+  .navbar {
+    padding: 10px 0;
+  }
+
+  .navbar-brand {
+    font-size: 18px;
+  }
+
+  /* Hero section improvements */
+  .hero-section {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+    text-align: center;
+  }
+
+  .hero-section h1 {
+    font-size: 32px !important;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .hero-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+
+  /* Card improvements */
+  .card {
+    margin-bottom: 25px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  .card-title {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  /* List improvements */
+  ul, ol {
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+
+  /* Modal improvements for mobile */
+  .modal-dialog {
+    margin: 10px;
+    max-width: calc(100% - 20px);
+  }
+
+  .modal-content {
+    border-radius: 12px;
+  }
+
+  /* Accordion improvements */
+  .accordion-button {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  /* Dropdown improvements */
+  .dropdown-menu {
+    font-size: 16px;
+  }
+
+  .dropdown-item {
+    padding: 10px 15px;
+  }
+
+  /* Pagination improvements */
+  .pagination {
+    gap: 5px;
+  }
+
+  .page-link {
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+}
+
+/* Additional tablet landscape optimizations */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .th-container {
+    max-width: 95%;
+  }
+
+  .hero-section h1 {
+    font-size: 42px !important;
+  }
+
+  .btn {
+    padding: 12px 28px;
+    font-size: 16px;
+  }
+}
+
+/* Large tablets and small desktops */
+@media (min-width: 1025px) and (max-width: 1199px) {
+  .th-container {
+    max-width: 95%;
+  }
+}
 
 
 
